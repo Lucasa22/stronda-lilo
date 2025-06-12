@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração - Stronda Lilo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .font-brand {
+            font-family: 'Luckiest Guy', cursive;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-cyan-100 min-h-screen p-4">
+    <div class="max-w-4xl mx-auto">
+        <header class="text-center mb-8">
+            <h1 class="font-brand text-4xl text-cyan-800 mb-2">Painel de Administração</h1>
+            <p class="text-cyan-600">Adicione novos conteúdos facilmente</p>
+            <a href="index.html" class="inline-block mt-4 bg-cyan-500 text-white px-6 py-2 rounded-full hover:bg-cyan-600 transition-colors">
+                ← Voltar ao Site
+            </a>
+        </header>
+
+        <div class="grid md:grid-cols-2 gap-8">            <!-- Seção para adicionar imagens -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold mb-4 text-cyan-800">🖼️ Adicionar Nova Imagem</h2>
+                <form id="add-image-form">
+                    <input type="text" id="image-key" placeholder="Chave da imagem (ex: lilo-escola)" class="w-full p-3 border border-gray-300 rounded-lg mb-3" required>
+                    <input type="url" id="image-src" placeholder="URL da imagem" class="w-full p-3 border border-gray-300 rounded-lg mb-3" required>
+                    <input type="text" id="image-alt" placeholder="Descrição da imagem" class="w-full p-3 border border-gray-300 rounded-lg mb-3" required>
+                    <select id="image-category" class="w-full p-3 border border-gray-300 rounded-lg mb-3" required>
+                        <option value="">Escolha uma categoria</option>
+                        <option value="infancia">Infância</option>
+                        <option value="cotidiano">Cotidiano</option>
+                        <option value="momentos-especiais">Momentos Especiais</option>
+                        <option value="celebracoes">Celebrações</option>
+                        <option value="fantasias">Fantasias</option>
+                        <option value="escola">Escola</option>
+                        <option value="familia">Família</option>
+                        <option value="geral">Geral</option>
+                    </select>
+                    <button type="submit" class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors font-medium">
+                        Adicionar Imagem
+                    </button>
+                </form>
+            </div>
+
+            <!-- Seção para adicionar vídeos -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold mb-4 text-cyan-800">🎥 Adicionar Novo Vídeo</h2>
+                <form id="add-video-form">
+                    <input type="text" id="video-key" placeholder="Chave do vídeo (ex: tia-maria)" class="w-full p-3 border border-gray-300 rounded-lg mb-3" required>
+                    <input type="text" id="video-title" placeholder="Título do vídeo" class="w-full p-3 border border-gray-300 rounded-lg mb-3" required>
+                    <textarea id="video-description" placeholder="Descrição do vídeo" class="w-full p-3 border border-gray-300 rounded-lg mb-3 h-20" required></textarea>
+                    <select id="video-color" class="w-full p-3 border border-gray-300 rounded-lg mb-3" required>
+                        <option value="">Escolha uma cor</option>
+                        <option value="blue">Azul</option>
+                        <option value="pink">Rosa</option>
+                        <option value="green">Verde</option>
+                        <option value="purple">Roxo</option>
+                        <option value="red">Vermelho</option>
+                        <option value="yellow">Amarelo</option>
+                        <option value="indigo">Anil</option>
+                        <option value="cyan">Ciano</option>
+                    </select>                    <select id="video-rotation" class="w-full p-3 border border-gray-300 rounded-lg mb-3" required>
+                        <option value="">Escolha um efeito de rotação</option>
+                        <option value="hover:-rotate-2">Rotação Esquerda (-2°)</option>
+                        <option value="hover:rotate-2">Rotação Direita (2°)</option>
+                        <option value="hover:-rotate-1">Rotação Esquerda (-1°)</option>
+                        <option value="hover:rotate-1">Rotação Direita (1°)</option>
+                    </select>
+                    <input type="url" id="video-url" placeholder="URL do vídeo (YouTube, Google Drive, etc.)" class="w-full p-3 border border-gray-300 rounded-lg mb-3" required>
+                    
+                    <!-- Dicas de URL -->
+                    <div class="bg-blue-50 p-3 rounded-lg mb-3 text-sm">
+                        <h5 class="font-medium text-blue-800 mb-2">💡 Dicas de URL:</h5>
+                        <ul class="text-blue-700 space-y-1">
+                            <li><strong>Google Drive:</strong> https://drive.google.com/file/d/ID_DO_ARQUIVO/view</li>
+                            <li><strong>YouTube:</strong> https://youtube.com/watch?v=ID_DO_VIDEO</li>
+                            <li><strong>YouTube Shorts:</strong> https://youtube.com/shorts/ID_DO_VIDEO</li>
+                        </ul>
+                        <p class="text-blue-600 mt-2 text-xs">⚠️ Para Google Drive, certifique-se que o arquivo está compartilhado publicamente!</p>
+                    </div>
+                    <button type="submit" class="w-full bg-pink-500 text-white py-3 rounded-lg hover:bg-pink-600 transition-colors font-medium">
+                        Adicionar Vídeo
+                    </button>
+                </form>
+            </div>
+
+            <!-- Seção para adicionar mensagens -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold mb-4 text-cyan-800">💬 Adicionar Nova Mensagem</h2>
+                <form id="add-message-form">
+                    <textarea id="message-text" placeholder="Texto da mensagem" class="w-full p-3 border border-gray-300 rounded-lg mb-3 h-24" required></textarea>
+                    <input type="text" id="message-author" placeholder="Nome do autor" class="w-full p-3 border border-gray-300 rounded-lg mb-3" required>
+                    <input type="text" id="message-emoji" placeholder="Emoji (ex: 🌺)" class="w-full p-3 border border-gray-300 rounded-lg mb-3" maxlength="2" required>
+                    <select id="message-position" class="w-full p-3 border border-gray-300 rounded-lg mb-3" required>
+                        <option value="">Posição do emoji</option>
+                        <option value="left">Esquerda</option>
+                        <option value="right">Direita</option>
+                    </select>
+                    <select id="message-color" class="w-full p-3 border border-gray-300 rounded-lg mb-3" required>
+                        <option value="">Cor do nome</option>
+                        <option value="text-blue-600">Azul</option>
+                        <option value="text-pink-600">Rosa</option>
+                        <option value="text-green-600">Verde</option>
+                        <option value="text-purple-600">Roxo</option>
+                        <option value="text-red-600">Vermelho</option>
+                    </select>
+                    <button type="submit" class="w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition-colors font-medium">
+                        Adicionar Mensagem
+                    </button>
+                </form>
+            </div>
+
+            <!-- Seção para alterar citação -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold mb-4 text-cyan-800">✏️ Alterar Citação</h2>
+                <form id="change-quote-form">
+                    <textarea id="quote-text" placeholder="Texto da citação" class="w-full p-3 border border-gray-300 rounded-lg mb-3 h-24" required></textarea>
+                    <input type="text" id="quote-author" placeholder="Autor da citação" class="w-full p-3 border border-gray-300 rounded-lg mb-3" required>
+                    <button type="submit" class="w-full bg-yellow-500 text-white py-3 rounded-lg hover:bg-yellow-600 transition-colors font-medium">
+                        Alterar Citação
+                    </button>
+                </form>
+            </div>
+        </div>        <!-- Área de resultado -->
+        <div id="result-area" class="mt-8 p-4 bg-white rounded-lg shadow-lg hidden">
+            <h3 class="text-lg font-semibold mb-2 text-green-700">Códigos Gerados:</h3>
+            <p class="text-sm text-gray-600 mb-3">Escolha onde adicionar o conteúdo:</p>
+            
+            <div class="space-y-4">
+                <div id="codigo-conteudo" class="hidden">
+                    <h4 class="font-medium text-blue-700">Para arquivo conteudo.json (recomendado):</h4>
+                    <textarea class="codigo-textarea w-full p-3 bg-gray-100 border rounded-lg h-24 font-mono text-sm" readonly></textarea>
+                    <button class="copy-btn mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors text-sm">
+                        Copiar Código conteudo.json
+                    </button>
+                </div>
+                
+                <div id="codigo-separado" class="hidden">
+                    <h4 class="font-medium text-pink-700">Para arquivos separados (compatibilidade):</h4>
+                    <textarea class="codigo-textarea w-full p-3 bg-gray-100 border rounded-lg h-24 font-mono text-sm" readonly></textarea>
+                    <button class="copy-btn mt-2 bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition-colors text-sm">
+                        Copiar Código arquivo separado
+                    </button>
+                </div>
+                
+                <div id="codigo-console" class="hidden">
+                    <h4 class="font-medium text-green-700">Para console do navegador (teste rápido):</h4>
+                    <textarea class="codigo-textarea w-full p-3 bg-gray-100 border rounded-lg h-16 font-mono text-sm" readonly></textarea>
+                    <button class="copy-btn mt-2 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition-colors text-sm">
+                        Copiar Código console
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center mt-12 p-6 bg-white rounded-lg shadow-lg">
+            <p class="text-cyan-700 font-medium">💡 <strong>Dica:</strong> Use o console do navegador (F12) na página principal para testar os códigos gerados!</p>
+        </footer>
+    </div>    <script>
+        // Funções para gerar código
+        function showResult(codigos) {
+            const resultArea = document.getElementById('result-area');
+            resultArea.classList.remove('hidden');
+            
+            // Mostrar código para conteudo.json
+            if (codigos.conteudo) {
+                const div = document.getElementById('codigo-conteudo');
+                div.classList.remove('hidden');
+                div.querySelector('.codigo-textarea').value = codigos.conteudo;
+            }
+            
+            // Mostrar código para arquivo separado
+            if (codigos.separado) {
+                const div = document.getElementById('codigo-separado');
+                div.classList.remove('hidden');
+                div.querySelector('.codigo-textarea').value = codigos.separado;
+            }
+            
+            // Mostrar código para console
+            if (codigos.console) {
+                const div = document.getElementById('codigo-console');
+                div.classList.remove('hidden');
+                div.querySelector('.codigo-textarea').value = codigos.console;
+            }
+        }
+
+        // Adicionar imagem
+        document.getElementById('add-image-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const key = document.getElementById('image-key').value;
+            const src = document.getElementById('image-src').value;
+            const alt = document.getElementById('image-alt').value;
+            const categoria = document.getElementById('image-category').value;
+            
+            const codigos = {
+                conteudo: `// Adicione dentro da seção "imagens" do conteudo.json:\n"${key}": {\n    "src": "${src}",\n    "alt": "${alt}",\n    "categoria": "${categoria}"\n}`,
+                separado: `// Adicione ao arquivo imagens.json:\n"${key}": {\n    "src": "${src}",\n    "alt": "${alt}",\n    "categoria": "${categoria}"\n}`,
+                console: `ContentManager.addGalleryImage("${key}", "${src}", "${alt}", "${categoria}");`
+            };
+            
+            showResult(codigos);
+            e.target.reset();
+        });        // Adicionar vídeo
+        document.getElementById('add-video-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const key = document.getElementById('video-key').value;
+            const title = document.getElementById('video-title').value;
+            const description = document.getElementById('video-description').value;
+            const color = document.getElementById('video-color').value;
+            const rotation = document.getElementById('video-rotation').value;
+            const url = document.getElementById('video-url').value;
+            
+            // Detectar tipo de URL e dar dicas
+            let tipoDica = '';
+            if (url.includes('drive.google.com')) {
+                tipoDica = '// ✅ Google Drive detectado - Ótima escolha para privacidade!\n';
+            } else if (url.includes('youtube.com') || url.includes('youtu.be')) {
+                tipoDica = '// ✅ YouTube detectado - Perfeito para streaming!\n';
+            }
+            
+            const codigos = {
+                conteudo: `${tipoDica}// Adicione dentro da seção "videos" do conteudo.json:\n"${key}": {\n    "titulo": "${title}",\n    "descricao": "${description}",\n    "sessao": "${key}",\n    "link": "${url}",\n    "cor": "${color}",\n    "rotacao": "${rotation}"\n}`,
+                separado: `${tipoDica}// Adicione ao arquivo depara.json:\n"${key}": {\n    "descricao": "${description}",\n    "sessao": "${key}",\n    "link": "${url}"\n}`,
+                console: `ContentManager.addVideo("${key}", "${title}", "${description}", "${url}", "${color}", "${rotation}");`
+            };
+            
+            showResult(codigos);
+            e.target.reset();
+        });
+
+        // Adicionar mensagem
+        document.getElementById('add-message-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const text = document.getElementById('message-text').value;
+            const author = document.getElementById('message-author').value;
+            const emoji = document.getElementById('message-emoji').value;
+            const position = document.getElementById('message-position').value;
+            const color = document.getElementById('message-color').value;
+            
+            const codigos = {
+                console: `ContentManager.addMessage("${text}", "${author}", "${emoji}", "${position}", "${color}");`
+            };
+            
+            showResult(codigos);
+            e.target.reset();
+        });
+
+        // Alterar citação
+        document.getElementById('change-quote-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const text = document.getElementById('quote-text').value;
+            const author = document.getElementById('quote-author').value;
+            
+            const codigos = {
+                console: `siteData.quote = { text: "${text}", author: "${author}" };\nContentManager.renderQuote();`
+            };
+            
+            showResult(codigos);
+            e.target.reset();
+        });
+
+        // Copiar código
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('copy-btn')) {
+                const textarea = e.target.parentElement.querySelector('.codigo-textarea');
+                textarea.select();
+                document.execCommand('copy');
+                
+                const originalText = e.target.textContent;
+                e.target.textContent = 'Copiado!';
+                e.target.classList.add('bg-green-500');
+                e.target.classList.remove('bg-blue-500', 'bg-pink-500', 'bg-green-500');
+                
+                setTimeout(() => {
+                    e.target.textContent = originalText;
+                    e.target.classList.remove('bg-green-500');
+                    // Restaurar cor original baseada no tipo
+                    if (originalText.includes('conteudo.json')) {
+                        e.target.classList.add('bg-blue-500');
+                    } else if (originalText.includes('separado')) {
+                        e.target.classList.add('bg-pink-500');
+                    } else {
+                        e.target.classList.add('bg-green-500');
+                    }
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>
