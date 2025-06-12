@@ -1,0 +1,100 @@
+{
+  "imagens": {
+    "IMG-20250611-WA0017": {
+      "src": "https://drive.google.com/uc?export=view&id=IMG-20250611-WA0012",
+      "alt": "Bebê de fralda tentando escalar um balde preto dentro de casa.",
+      "categoria": "infancia",
+      "capitulo": 1,
+      "ordem": 1,
+      "historia": "Toda grande jornada começa com um pequeno passo... ou com a tentativa de entrar em um balde. As primeiras explorações do mundo!"
+    },
+    "doce-descoberta": {
+      "src": "https://drive.google.com/uc?export=view&id=IMG-20250611-WA0009",
+      "alt": "Menina bem pequena com roupa rosa em uma área externa, segurando o que parece ser um cone.",
+      "categoria": "infancia",
+      "capitulo": 1,
+      "ordem": 2,
+      "historia": "Aquele momento mágico de descobrir os prazeres da vida, como um sorvete (ou pelo menos a casquinha) em um dia de sol."
+    },
+    "IMG-20250611-WA0014": {
+      "src": "https://drive.google.com/uc?export=view&id=IMG-20250611-WA0014",
+      "alt": "Criança sentada confortavelmente dentro do cesto de um carrinho de supermercado.",
+      "categoria": "infancia",
+      "capitulo": 1,
+      "ordem": 3,
+      "historia": "O melhor lugar do supermercado! Um camarote particular para supervisionar as compras e garantir que os itens essenciais (doces) não sejam esquecidos."
+    },
+    "banho-de-tanque": {
+      "src": "https://drive.google.com/uc?export=view&id=IMG-20250611-WA0010",
+      "alt": "Criança sorrindo enquanto toma banho em um grande tanque de lavar roupa.",
+      "categoria": "infancia",
+      "capitulo": 1,
+      "ordem": 4,
+      "historia": "Quem precisa de uma banheira de luxo quando se tem um tanque espaçoso? Diversão garantida e um clássico da infância."
+    },
+    "aventura-no-campo": {
+      "src": "https://drive.google.com/uc?export=view&id=IMG-20250611-WA0013",
+      "alt": "Menina sorridente deitada em uma estrutura de madeira ao ar livre, com vegetação ao fundo.",
+      "categoria": "infancia",
+      "capitulo": 1,
+      "ordem": 5,
+      "historia": "A simplicidade e a alegria de brincar ao ar livre, onde qualquer estrutura de madeira vira o melhor parque de diversões."
+    },
+    "coelhinha-da-pascoa": {
+      "src": "https://drive.google.com/uc?export=view&id=IMG-20250611-WA0006",
+      "alt": "Menina com uma fantasia de coelhinha branca, com orelhas, nariz pintado e rabinho.",
+      "categoria": "eventos",
+      "capitulo": 2,
+      "ordem": 1,
+      "historia": "Em modo coelhinha para alguma apresentação da escola ou para a Páscoa. Uma fofura com braços cruzados e olhar determinado!"
+    },
+    "caipirinha-no-arraia": {
+      "src": "https://drive.google.com/uc?export=view&id=IMG-20250611-WA0007",
+      "alt": "Menina vestida com traje de festa junina, com vestido azul, laços e chapéu de palha.",
+      "categoria": "eventos",
+      "capitulo": 2,
+      "ordem": 2,
+      "historia": "Pronta para dançar quadrilha! O charme das festas juninas da escola, com direito a bochechas pintadas e tudo."
+    },
+    "primeiro-diploma": {
+      "src": "https://drive.google.com/uc?export=view&id=IMG-20250611-WA0011",
+      "alt": "Menina em sua formatura da pré-escola, usando capelo e beca vermelha e segurando o diploma.",
+      "categoria": "eventos",
+      "capitulo": 2,
+      "ordem": 3,
+      "historia": "A primeira de muitas conquistas! A formatura da educação infantil, um marco de muito orgulho para toda a família."
+    },
+    "amor-de-geracoes": {
+      "src": "https://drive.google.com/uc?export=view&id=IMG-20250611-WA0005",
+      "alt": "Mulher adulta sorrindo, de pé entre seus avós, segurando a mão de seu avô.",
+      "categoria": "familia",
+      "capitulo": 3,
+      "ordem": 1,
+      "historia": "Um retrato de carinho e conexão. A força e o amor que unem gerações, guardados em uma memória especial com os avós."
+    },
+    "liberdade-na-montanha": {
+      "src": "https://drive.google.com/uc?export=view&id=IMG-20250611-WA0008",
+      "alt": "Mulher de braços abertos no cume de uma montanha, com um vale verde e uma cachoeira ao fundo.",
+      "categoria": "viagens",
+      "capitulo": 3,
+      "ordem": 2,
+      "historia": "Conectando-se com a natureza e celebrando a liberdade no topo do mundo. Uma vista es spectacular para renovar as energias."
+    },
+    "aquarela-gato-preto": {
+      "src": "https://drive.google.com/uc?export=view&id=IMG-20250611-WA0015",
+      "alt": "Pintura em aquarela de um gato preto com olhos amarelos expressivos.",
+      "categoria": "arte",
+      "capitulo": 4,
+      "ordem": 1,
+      "historia": "Uma homenagem artística ao companheiro de quatro patas. A intensidade do olhar felino capturada em aquarela."
+    },
+    "girassois-no-campo": {
+      "src": "https://drive.google.com/uc?export=view&id=IMG-20250611-WA0016",
+      "alt": "Pintura de um campo de girassóis vibrantes sob um céu azul.",
+      "categoria": "arte",
+      "capitulo": 4,
+      "ordem": 2,
+      "historia": "Inspirado na beleza e na energia dos girassóis, esta pintura busca trazer um pouco de luz e alegria para qualquer ambiente."
+    }
+  }
+}

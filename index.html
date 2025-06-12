@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ohana da Lilo - Parabéns pela Formatura!</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F0F7FF;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a4d4ff' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .font-brand {
+            font-family: 'Luckiest Guy', cursive;
+        }
+        .text-gradient-tropical {
+            background: linear-gradient(45deg, #00B4D8, #0077B6, #03045E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        /* Estilos para as Abas */
+        .tab-button {
+            transition: all 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+        .tab-button.active {
+            color: #03045E;
+            border-bottom-color: #FF69B4; /* Rosa choque para destacar */
+            transform: translateY(-2px);
+        }
+        /* Esconde o conteúdo da aba inativa */
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Canvas para os confetes temáticos -->
+    <canvas id="confetti-canvas" class="fixed top-0 left-0 w-full h-full z-50 pointer-events-none"></canvas>
+
+    <!-- Modal para visualização de imagem -->
+    <div id="image-modal" class="modal fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 opacity-0 pointer-events-none p-4">
+        <img id="modal-img" src="" alt="Imagem em destaque" class="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl border-4 border-white">
+        <button id="close-modal" class="absolute top-5 right-5 text-white text-5xl font-brand">&times;</button>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="container mx-auto p-4 md:p-8">        <!-- Cabeçalho Fixo -->
+        <header class="text-center py-8 relative">
+            <h1 class="font-brand text-5xl md:text-7xl text-gradient-tropical">Parabéns, Lilo!</h1>
+            <p class="mt-2 text-lg md:text-xl text-cyan-700">Uma homenagem da sua `Ohana`</p>
+            
+            <!-- Botão Admin (discreto) -->
+            <a href="admin.html" 
+               class="absolute top-4 right-4 text-xs text-cyan-600 hover:text-cyan-800 transition-colors opacity-50 hover:opacity-100" 
+               title="Painel Administrativo">
+                ⚙️ Admin
+            </a>
+        </header>
+
+        <!-- Navegação das Abas -->
+        <nav class="flex justify-center gap-4 md:gap-8 my-8">
+            <button data-tab="lilo" class="tab-button active font-brand text-2xl md:text-3xl text-cyan-800 pb-2">A Formanda (Lilo)</button>
+            <button data-tab="ohana" class="tab-button font-brand text-2xl md:text-3xl text-cyan-800 pb-2">A `Ohana`</button>
+        </nav>
+
+        <!-- Conteúdo das Abas -->
+        <main>
+            <!-- Aba 1: A Formanda (Lilo) -->
+            <div id="tab-lilo" class="tab-content active">                <section class="text-center bg-white/70 p-8 rounded-2xl shadow-lg mb-12">
+                     <h2 class="font-brand text-3xl md:text-4xl text-cyan-800 mb-6">🌺 A Jornada Completa da Nossa Lilo 🌺</h2>
+                     <div class="text-left max-w-4xl mx-auto space-y-6">
+                         <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+                             <h3 class="font-brand text-xl text-blue-800 mb-2">📂 Arquivo Ultrassecreto</h3>
+                             <p class="text-gray-700"><strong>Nome:</strong> Ana Tereza (Codinome: Lilo)<br>
+                             <strong>Missão Principal:</strong> Conquistar o diploma em Pedagogia e espalhar a magia da educação<br>
+                             <strong>Status:</strong> ✅ MISSÃO CONCLUÍDA COM SUCESSO!</p>
+                         </div>
+                         
+                         <div class="grid md:grid-cols-2 gap-6 text-sm">
+                             <div class="bg-pink-50 p-4 rounded-lg">
+                                 <h4 class="font-bold text-pink-800 mb-2">🌟 Capítulo 1: Os Primeiros Experimentos</h4>
+                                 <p class="text-gray-700">Desde bebê, nossa Lilo já testava os limites do universo conhecido. Das conquistas de vasos aos primeiros "spas havaianos" no tanque de lavar roupa, cada momento foi um experimento de pura criatividade.</p>
+                             </div>
+                             
+                             <div class="bg-green-50 p-4 rounded-lg">
+                                 <h4 class="font-bold text-green-800 mb-2">🚀 Capítulo 2: Desbravando o Mundo</h4>
+                                 <p class="text-gray-700">Com joelhos ralados e muita imaginação, explorou mercados no seu "carrinho-jipe", testou a gravidade de cabeça para baixo e descobriu que ser "normal" não era para ela.</p>
+                             </div>
+                             
+                             <div class="bg-purple-50 p-4 rounded-lg">
+                                 <h4 class="font-bold text-purple-800 mb-2">🎓 Capítulo 3: A Jornada da Heroína</h4>
+                                 <p class="text-gray-700">Da primeira beca aos palcos, das montanhas escaladas aos horizontes conquistados. A faculdade foi como escalar o Mauna Kea: exigiu preparo, mas a vista do topo... Ah, a vista!</p>
+                             </div>
+                             
+                             <div class="bg-yellow-50 p-4 rounded-lg">
+                                 <h4 class="font-bold text-yellow-800 mb-2">💕 Capítulo 4: E a Ohana Cresceu</h4>
+                                 <p class="text-gray-700">Encontrou seu Stitch, formou sua própria Ohana e provou que família é quem você escolhe para dividir as aventuras da vida. O coração agora bate em múltiplas frequências.</p>
+                             </div>
+                         </div>
+                         
+                         <div class="text-center bg-gradient-to-r from-cyan-100 to-blue-100 p-4 rounded-lg">
+                             <p class="text-cyan-800 font-medium">🌺 <em>"Ohana quer dizer família. Família quer dizer nunca abandonar ou esquecer."</em> 🌺</p>
+                             <p class="text-sm text-gray-600 mt-2">E essa é a história de como nossa Lilo construiu a sua própria Ohana, uma experiência de cada vez.</p>
+                         </div>
+                     </div>
+                </section>                  <section id="gallery">
+                    <h2 class="font-brand text-4xl md:text-5xl text-center mb-8 text-cyan-800">📸 A Jornada em Imagens 📸</h2>
+                    <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+                        <em>Passe o mouse sobre as fotos para descobrir a história por trás de cada momento! 
+                        As imagens estão organizadas cronologicamente, contando a jornada completa da nossa Lilo desde os primeiros experimentos até os dias atuais.</em>
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    <!-- Galeria será carregada dinamicamente via JavaScript -->
+</div>
+                </section>
+            </div>
+
+            <!-- Aba 2: A Ohana -->
+            <div id="tab-ohana" class="tab-content">                <section id="videos" class="py-12">
+                    <h2 class="font-brand text-4xl md:text-5xl text-center mb-12 text-cyan-800">Recados da Galáxia</h2>
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8">
+                         <!-- Vídeos serão carregados dinamicamente via JavaScript -->
+                    </div>
+                </section>                <section id="messages" class="py-12">
+                    <h2 class="font-brand text-4xl md:text-5xl text-center mb-12 text-cyan-800">Mural de `Ohana`</h2>
+                    <div class="space-y-8 max-w-2xl mx-auto">
+                        <!-- Mensagens serão carregadas dinamicamente via JavaScript -->
+                    </div>
+                </section>                <section id="quote" class="py-16 text-center">
+                    <div class="max-w-3xl mx-auto p-8 bg-white/70 backdrop-blur-sm rounded-2xl shadow-xl">
+                        <!-- Citação será carregada dinamicamente via JavaScript -->
+                    </div>
+                </section>
+            </div>
+        </main>
+        
+        <!-- Rodapé -->
+        <footer class="text-center py-10 mt-4 border-t-2 border-dashed border-cyan-300">
+            <p class="font-brand text-3xl text-cyan-800">"`Ohana` quer dizer família."</p>
+            <p class="font-brand text-3xl text-cyan-800">"Família quer dizer nunca abandonar ou esquecer."</p>
+        </footer>
+
+    </div>    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script src="data.js"></script>
+      <script>        document.addEventListener('DOMContentLoaded', async () => {
+            // --- Inicializar Conteúdo Dinâmico ---
+            await ContentManager.init();
+
+            // --- Lógica das Abas ---
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabName = button.dataset.tab;
+
+                    // Atualiza botões
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    button.classList.add('active');
+
+                    // Atualiza conteúdo
+                    tabContents.forEach(content => {
+                        if (content.id === `tab-${tabName}`) {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+            // --- Lógica dos Confetes ---
+            const confettiCanvas = document.getElementById('confetti-canvas');
+            const myConfetti = confetti.create(confettiCanvas, { resize: true, useWorker: true });
+            const tropicalColors = ['#00B4D8', '#48CAE4', '#90E0EF', '#ADE8F4', '#FF69B4', '#FFFFFF'];
+            
+            setTimeout(() => {
+                myConfetti({ particleCount: 200, spread: 180, origin: { y: 0.6 }, colors: tropicalColors });
+            }, 500);
+
+            // --- Lógica do Modal de Imagem ---
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            const closeModal = document.getElementById('close-modal');
+
+            function closeImageModal() {
+                 modal.classList.add('opacity-0', 'pointer-events-none');
+            }
+
+            closeModal.addEventListener('click', closeImageModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeImageModal();
+            });
+        });
+    </script>
+</body>
+</html>
