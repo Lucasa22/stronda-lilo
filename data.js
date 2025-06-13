@@ -344,9 +344,7 @@ const ContentManager = {
             galleryContainer.appendChild(imgContainer);
         });// Re-adicionar event listeners para o modal
         this.attachGalleryListeners();
-    },
-
-    // Renderizar vídeo do Stitch no header
+    },    // Renderizar vídeo do Stitch no header
     renderStitchHeader: function() {
         const stitchVideo = siteData.videos.find(video => video.sessao === 'recado-stitch');
         if (stitchVideo) {
