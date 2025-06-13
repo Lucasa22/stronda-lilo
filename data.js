@@ -312,8 +312,7 @@ const ContentManager = {
                 return a.capitulo - b.capitulo;
             }
             return 0;
-        });
-          imagensOrdenadas.forEach((item, index) => {
+        });        imagensOrdenadas.forEach((item, index) => {
             const imgContainer = document.createElement('div');
             imgContainer.className = 'relative group';
             
@@ -322,22 +321,24 @@ const ContentManager = {
             img.alt = item.alt;
             img.className = 'gallery-item w-full h-auto rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer object-cover aspect-square border-4 border-white';
             
-            // Números de teste galácticos
-            const numeroTeste = Math.floor(Math.random() * 9999) + 1000;
-            const prefixosGalacticos = [
-                'EXP-627', 'TESTE-', 'LAB-', 'PROTO-', 'SAMPLE-', 'SPEC-', 'DATA-', 'FILE-'
+            // Códigos de experimentos galácticos fixos
+            const codigosExperimentos = [
+                'EXP-627', 'EXP-628', 'EXP-629', 'EXP-630', 'EXP-631', 
+                'EXP-632', 'EXP-633', 'EXP-634', 'EXP-635', 'EXP-636',
+                'EXP-637', 'EXP-638', 'EXP-639'
             ];
+            
             const coresNumero = [
                 'bg-cyan-500', 'bg-pink-500', 'bg-purple-500', 'bg-green-500', 
                 'bg-yellow-500', 'bg-red-500', 'bg-indigo-500', 'bg-orange-500'
             ];
             
-            const prefixo = prefixosGalacticos[index % prefixosGalacticos.length];
+            const codigoExperimento = codigosExperimentos[index % codigosExperimentos.length];
             const cor = coresNumero[index % coresNumero.length];
             
             const badge = document.createElement('div');
             badge.className = `absolute top-2 left-2 ${cor} text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg transform rotate-12 group-hover:rotate-0 transition-transform duration-300 border-2 border-white`;
-            badge.textContent = `${prefixo}${numeroTeste}`;
+            badge.textContent = codigoExperimento;
             
             imgContainer.appendChild(badge);
             imgContainer.appendChild(img);
@@ -430,13 +431,12 @@ const ContentManager = {
                     `;
                 }
             }
-            
-            videoCard.innerHTML = `
+              videoCard.innerHTML = `
                 ${videoContent}
                 <h3 class="font-brand text-xl text-cyan-900 mb-3 leading-tight">
                     ${videoInfo.icon} ${video.title}
                 </h3>
-                <p class="text-sm text-gray-600 mb-5 line-clamp-3">${video.description}</p>                ${videoInfo.source === 'drive' || videoInfo.source === 'youtube' ? 
+                ${videoInfo.source === 'drive' || videoInfo.source === 'youtube' ? 
                     `<a href="${videoInfo.original}" target="_blank" class="inline-block bg-gradient-to-r from-${video.color}-400 to-${video.color}-600 text-white font-brand py-3 px-6 rounded-full hover:from-${video.color}-500 hover:to-${video.color}-700 transition-all duration-300 text-sm shadow-lg transform hover:scale-105">
                         ✨ Abrir ${videoInfo.source === 'drive' ? 'no Drive' : 'no YouTube'}
                     </a>` :
@@ -451,16 +451,17 @@ const ContentManager = {
             `;
             videosContainer.appendChild(videoCard);
         });
-    },    // Renderizar vídeos especiais (vovó e usuário)
-    renderVideosEspeciais: function() {
+    },    // Renderizar vídeos especiais (vovó e usuário)    renderVideosEspeciais: function() {
         console.log('=== RENDERIZANDO VÍDEOS ESPECIAIS ===');
         console.log('Vídeos especiais carregados:', siteData.videosEspeciais);
         
         // Renderizar vídeo da vovó
         if (siteData.videosEspeciais.vovo) {
-            const vovoSection = document.querySelector('#video-vovo-especial video source');
-            if (vovoSection) {
-                vovoSection.src = siteData.videosEspeciais.vovo.link;
+            const vovoVideoElement = document.querySelector('#video-vovo-especial video');
+            const vovoSource = document.querySelector('#video-vovo-especial video source');
+            if (vovoVideoElement && vovoSource) {
+                vovoSource.src = siteData.videosEspeciais.vovo.link;
+                vovoVideoElement.load(); // Recarregar o vídeo
                 console.log('Vídeo da vovó configurado:', siteData.videosEspeciais.vovo.link);
             } else {
                 console.error('Elemento de vídeo da vovó não encontrado');
@@ -471,9 +472,11 @@ const ContentManager = {
         
         // Renderizar vídeo do usuário
         if (siteData.videosEspeciais.usuario) {
-            const usuarioSection = document.querySelector('#minha-explicacao video source');
-            if (usuarioSection) {
-                usuarioSection.src = siteData.videosEspeciais.usuario.link;
+            const usuarioVideoElement = document.querySelector('#minha-explicacao video');
+            const usuarioSource = document.querySelector('#minha-explicacao video source');
+            if (usuarioVideoElement && usuarioSource) {
+                usuarioSource.src = siteData.videosEspeciais.usuario.link;
+                usuarioVideoElement.load(); // Recarregar o vídeo
                 console.log('Vídeo do usuário configurado:', siteData.videosEspeciais.usuario.link);
             } else {
                 console.error('Elemento de vídeo do usuário não encontrado');
