@@ -1,10 +1,14 @@
 // Dados do site - Para facilitar a adição de novos conteúdos
 const siteData = {
     // Dados da galeria de fotos (carregados dinamicamente)
-    gallery: [],
-
-    // Dados dos vídeos (carregados dinamicamente)
-    videos: [],    // Dados das mensagens
+    gallery: [],    // Dados dos vídeos (carregados dinamicamente)
+    videos: [],
+    
+    // Dados dos vídeos especiais (vovó e usuário)
+    videosEspeciais: {
+        vovo: null,
+        usuario: null
+    },// Dados das mensagens
     messages: [
         {
             text: "Parabéns, meu amor.. Você é incrível e é um privilégio eu aprender todos os dias com a melhor teacher desse mundo ❤️",
@@ -40,8 +44,7 @@ const DataLoader = {
                     historia: img.historia
                 }));
             }
-            
-            // Carregar vídeos
+              // Carregar vídeos
             if (conteudoData.videos) {
                 siteData.videos = Object.entries(conteudoData.videos).map(([key, video]) => ({
                     title: video.titulo || video.sessao.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
@@ -49,8 +52,16 @@ const DataLoader = {
                     color: video.cor || 'blue',
                     url: video.link,
                     hoverRotation: video.rotacao || 'hover:rotate-1',
-                    sessao: video.sessao
+                    sessao: video.sessao,
+                    autoplay: video.autoplay || false,
+                    tipo: video.tipo || 'normal'
                 }));
+            }
+            
+            // Carregar vídeos especiais
+            if (conteudoData.videos_especiais) {
+                siteData.videosEspeciais.vovo = conteudoData.videos_especiais.vovo;
+                siteData.videosEspeciais.usuario = conteudoData.videos_especiais.usuario;
             }
             
             return { images: siteData.gallery, videos: siteData.videos };
@@ -195,6 +206,18 @@ const VideoManager = {
             source: source,
             icon: this.getSourceIcon(source)
         };
+    },
+    
+    // Abrir modal de vídeo
+    openVideoModal: function(url, title) {
+        // Para vídeos locais, abrir em nova janela
+        if (url.startsWith('/stronda-lilo/')) {
+            window.open(url, '_blank');
+            return;
+        }
+        
+        // Para outros tipos de vídeo, implementar modal se necessário
+        window.open(url, '_blank');
     }
 };
 
@@ -412,6 +435,25 @@ const ContentManager = {
         });
     },
 
+    // Renderizar vídeos especiais (vovó e usuário)
+    renderVideosEspeciais: function() {
+        // Renderizar vídeo da vovó
+        if (siteData.videosEspeciais.vovo) {
+            const vovoSection = document.querySelector('#video-vovo-especial video source');
+            if (vovoSection) {
+                vovoSection.src = siteData.videosEspeciais.vovo.link;
+            }
+        }
+        
+        // Renderizar vídeo do usuário
+        if (siteData.videosEspeciais.usuario) {
+            const usuarioSection = document.querySelector('#minha-explicacao video source');
+            if (usuarioSection) {
+                usuarioSection.src = siteData.videosEspeciais.usuario.link;
+            }
+        }
+    },
+
     // Renderizar mensagens
     renderMessages: function() {
         const messagesContainer = document.querySelector('#messages .space-y-8');
@@ -542,6 +584,7 @@ const ContentManager = {
         // Renderizar o conteúdo
         this.renderGallery();
         this.renderVideos();
+        this.renderVideosEspeciais();
         this.renderMessages();
         this.renderQuote();
         

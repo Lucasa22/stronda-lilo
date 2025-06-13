@@ -57,6 +57,20 @@
       "rotacao": "hover:rotate-2"
     }
   },
+  "videos_especiais": {
+    "vovo": {
+      "titulo": "Mensagem da Vovó",
+      "descricao": "Por essa eu tenho certeza que você não esperava 💙💙",
+      "link": "/stronda-lilo/FORMADA/vovo.mp4",
+      "destaque": true
+    },
+    "usuario": {
+      "titulo": "Chegou minha vez...",
+      "descricao": "Um recado feito com todo o amor do mundo para celebrar essa conquista incrível! 🌺",
+      "link": "/stronda-lilo/FORMADA/meuvideopraformada.mp4",
+      "autor": "Seu Amor"
+    }
+  },
   "imagens": {
     "primeiros-passos-balde": {
       "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0012.jpg",
