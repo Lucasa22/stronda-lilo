@@ -23,7 +23,8 @@
         }
         .font-brand {
             font-family: 'Luckiest Guy', cursive;
-        }        .text-gradient-tropical {
+        }
+        .text-gradient-tropical {
             background: linear-gradient(45deg, #00B4D8, #0077B6, #03045E);
             -webkit-background-clip: text;
             background-clip: text;
@@ -32,12 +33,10 @@
         .modal {
             transition: opacity 0.25s ease;
         }
-          /* Estilos divertidos para os cards de vídeo */
+        
+        /* Estilos divertidos para os cards de vídeo */
         .video-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-origin: center;
-            width: 280px;
-            min-height: 200px;
         }
         .video-card:hover {
             transform: translateY(-8px) scale(1.05) !important;
@@ -58,6 +57,7 @@
             0%, 100% { transform: translateY(0px) rotate(1.5deg); }
             50% { transform: translateY(-10px) rotate(-1.5deg); }
         }
+
         /* Estilos para as Abas */
         .tab-button {
             transition: all 0.3s ease;
@@ -84,118 +84,92 @@
 </head>
 <body class="text-gray-800">
 
-    <!-- Canvas para os confetes temáticos -->
     <canvas id="confetti-canvas" class="fixed top-0 left-0 w-full h-full z-50 pointer-events-none"></canvas>
 
-    <!-- Modal para visualização de imagem -->
     <div id="image-modal" class="modal fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 opacity-0 pointer-events-none p-4">
         <img id="modal-img" src="" alt="Imagem em destaque" class="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl border-4 border-white">
         <button id="close-modal" class="absolute top-5 right-5 text-white text-5xl font-brand">&times;</button>
     </div>
 
-    <!-- Conteúdo Principal -->
-    <div class="container mx-auto p-4 md:p-8">        <!-- Cabeçalho Fixo -->
-        <header class="text-center py-8 relative">
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center py-8">
             <h1 class="font-brand text-5xl md:text-7xl text-gradient-tropical">Parabéns, Lilo!</h1>
             <p class="mt-2 text-lg md:text-xl text-cyan-700">Uma homenagem da sua `Ohana`</p>
-            
-            <!-- Botão Admin (discreto) -->
-            <a href="admin.html" 
-               class="absolute top-4 right-4 text-xs text-cyan-600 hover:text-cyan-800 transition-colors opacity-50 hover:opacity-100" 
-               title="Painel Administrativo">
-                ⚙️ Admin
-            </a>
-        </header>        <!-- Navegação das Abas -->
+        </header>
+
         <nav class="flex justify-center gap-2 md:gap-4 my-8 flex-wrap">
             <button data-tab="lilo" class="tab-button active font-brand text-xl md:text-2xl text-cyan-800 pb-2">A Formanda (Lilo)</button>
             <button data-tab="ohana" class="tab-button font-brand text-xl md:text-2xl text-cyan-800 pb-2">A `Ohana`</button>
             <button data-tab="explicacao" class="tab-button font-brand text-xl md:text-2xl text-cyan-800 pb-2">Agora, vou te explicar tudo...</button>
         </nav>
 
-        <!-- Conteúdo das Abas -->
         <main>
             <!-- Aba 1: A Formanda (Lilo) -->
-            <div id="tab-lilo" class="tab-content active">                <section class="text-center bg-white/70 p-8 rounded-2xl shadow-lg mb-12">
-                     <h2 class="font-brand text-3xl md:text-4xl text-cyan-800 mb-6">🌺 A Jornada Completa da Nossa Lilo 🌺</h2>
-                     <div class="text-left max-w-4xl mx-auto space-y-6">
-                         <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
-                             <h3 class="font-brand text-xl text-blue-800 mb-2">📂 Arquivo Ultrassecreto</h3>
-                             <p class="text-gray-700"><strong>Nome:</strong> Ana Tereza (Codinome: Lilo)<br>
-                             <strong>Missão Principal:</strong> Conquistar o diploma em Pedagogia e espalhar a magia da educação<br>
-                             <strong>Status:</strong> ✅ MISSÃO CONCLUÍDA COM SUCESSO!</p>
-                         </div>
-                         
-                         <div class="grid md:grid-cols-2 gap-6 text-sm">
-                             <div class="bg-pink-50 p-4 rounded-lg">
-                                 <h4 class="font-bold text-pink-800 mb-2">🌟 Capítulo 1: Os Primeiros Experimentos</h4>
-                                 <p class="text-gray-700">Desde bebê, nossa Lilo já testava os limites do universo conhecido. Das conquistas de vasos aos primeiros "spas havaianos" no tanque de lavar roupa, cada momento foi um experimento de pura criatividade.</p>
-                             </div>
-                             
-                             <div class="bg-green-50 p-4 rounded-lg">
-                                 <h4 class="font-bold text-green-800 mb-2">🚀 Capítulo 2: Desbravando o Mundo</h4>
-                                 <p class="text-gray-700">Com joelhos ralados e muita imaginação, explorou mercados no seu "carrinho-jipe", testou a gravidade de cabeça para baixo e descobriu que ser "normal" não era para ela.</p>
-                             </div>
-                             
-                             <div class="bg-purple-50 p-4 rounded-lg">
-                                 <h4 class="font-bold text-purple-800 mb-2">🎓 Capítulo 3: A Jornada da Heroína</h4>
-                                 <p class="text-gray-700">Da primeira beca aos palcos, das montanhas escaladas aos horizontes conquistados. A faculdade foi como escalar o Mauna Kea: exigiu preparo, mas a vista do topo... Ah, a vista!</p>
-                             </div>
-                             
-                             <div class="bg-yellow-50 p-4 rounded-lg">
-                                 <h4 class="font-bold text-yellow-800 mb-2">💕 Capítulo 4: E a Ohana Cresceu</h4>
-                                 <p class="text-gray-700">Encontrou seu Stitch, formou sua própria Ohana e provou que família é quem você escolhe para dividir as aventuras da vida. O coração agora bate em múltiplas frequências.</p>
-                             </div>
-                         </div>
-                         
-                         <div class="text-center bg-gradient-to-r from-cyan-100 to-blue-100 p-4 rounded-lg">
-                             <p class="text-cyan-800 font-medium">🌺 <em>"Ohana quer dizer família. Família quer dizer nunca abandonar ou esquecer."</em> 🌺</p>
-                             <p class="text-sm text-gray-600 mt-2">E essa é a história de como nossa Lilo construiu a sua própria Ohana, uma experiência de cada vez.</p>
-                         </div>
+            <div id="tab-lilo" class="tab-content active">
+                <section class="text-center bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-lg mb-12 border-2 border-pink-300">
+                     <h2 class="font-brand text-3xl md:text-4xl text-pink-600 mb-4">Ficha do Experimento 627: "Lilo"</h2>
+                     <div class="text-left max-w-2xl mx-auto space-y-3 text-gray-700">
+                        <p><strong><span class="text-pink-500">◆</span> Designação:</strong> Ana Tereza, A Pedagoga Fantástica</p>
+                        <p><strong><span class="text-blue-500">◆</span> Diretiva Primária:</strong> Mudar o mundo através da educação, um aluno de cada vez.</p>
+                        <p><strong><span class="text-yellow-500">◆</span> Atributos Observados:</strong></p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li><strong>Carisma Galáctico:</strong> Nível 100 (Capaz de acalmar um Stitch e fazer amizade com qualquer ser da galáxia).</li>
+                            <li><strong>Inteligência Freiriana:</strong> Nível 100 (Potencializada por doses de café e sabedoria de Paulo Freire).</li>
+                            <li><strong>Coração:</strong> Escala de medição quebrada (simplesmente grande demais).</li>
+                        </ul>
+                        <p><strong><span class="text-green-500">◆</span> Habilidade Especial:</strong> <span class="font-bold">Vínculo de `Ohana`</span>. Com seu carinho, une as pessoas e garante que ninguém seja deixado para trás ou esquecido.</p>
                      </div>
-                </section>                  <section id="gallery">
-                    <h2 class="font-brand text-4xl md:text-5xl text-center mb-8 text-cyan-800">📸 A Jornada em Imagens 📸</h2>
-                    <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
-                        <em>Passe o mouse sobre as fotos para descobrir a história por trás de cada momento! 
-                        As imagens estão organizadas cronologicamente, contando a jornada completa da nossa Lilo desde os primeiros experimentos até os dias atuais.</em>
+                </section>
+                
+                <section id="gallery">
+                    <h2 class="font-brand text-4xl md:text-5xl text-center mb-8 text-cyan-800">📸 Registros de Campo (Linha do Tempo) 📸</h2>
+                    <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                        Evidências visuais da evolução do Experimento 627, desde os testes iniciais de mobilidade até a conclusão bem-sucedida da diretiva primária.
                     </p>
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-    <!-- Galeria será carregada dinamicamente via JavaScript -->
-</div>
+                        <img src="https://storage.googleapis.com/gemini-prod/images/image.png-c4987bce-59f8-49f7-886d-5cf0e5ffbfea" alt="Lilo bebê" class="gallery-item w-full h-auto rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer object-cover aspect-square border-4 border-white">
+                        <img src="https://storage.googleapis.com/gemini-prod/images/image.png-3413a9d1-31aa-4f9f-9cbe-25b249a5c056" alt="Lilo no mercado" class="gallery-item w-full h-auto rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer object-cover aspect-square border-4 border-white">
+                        <img src="https://storage.googleapis.com/gemini-prod/images/image.png-d0907c0a-ad2f-4899-bf0e-4e633a1ecd0b" alt="Lilo criança brincando" class="gallery-item w-full h-auto rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer object-cover aspect-square border-4 border-white">
+                        <img src="https://storage.googleapis.com/gemini-prod/images/image.png-0337a4b4-daac-40a5-a813-6c70b705eb6a" alt="Lilo com sorvete" class="gallery-item w-full h-auto rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer object-cover aspect-square border-4 border-white">
+                        <img src="https://storage.googleapis.com/gemini-prod/images/image.png-1ad74f65-3c97-4751-801e-d6e463577e4c" alt="Lilo em festa junina" class="gallery-item w-full h-auto rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer object-cover aspect-square border-4 border-white">
+                        <img src="https://storage.googleapis.com/gemini-prod/images/image.png-b2ea3ee5-d49d-4878-9e47-014ec592ea74" alt="Lilo de coelhinha" class="gallery-item w-full h-auto rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer object-cover aspect-square border-4 border-white">
+                        <img src="https://storage.googleapis.com/gemini-prod/images/image.png-09810920-c90c-4f5b-8b61-a26bd6551ba6" alt="Lilo com chapéu rosa" class="gallery-item w-full h-auto rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer object-cover aspect-square border-4 border-white">
+                        <img src="https://storage.googleapis.com/gemini-prod/images/image.png-30680e49-c7aa-4745-b85c-a96cd4ce728d" alt="Primeira formatura da Lilo" class="gallery-item w-full h-auto rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer object-cover aspect-square border-4 border-white">
+                        <img src="https://storage.googleapis.com/gemini-prod/images/image.png-f33cfed0-6c97-460b-bafe-9f5f6ded130e" alt="Lilo no teatro" class="gallery-item w-full h-auto rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer object-cover aspect-square border-4 border-white">
+                        <img src="https://storage.googleapis.com/gemini-prod/images/image.png-8aebf1bd-9be8-449e-a154-08cc4f61d1c4" alt="Lilo na natureza" class="gallery-item w-full h-auto rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer object-cover aspect-square border-4 border-white">
+                    </div>
                 </section>
             </div>
 
             <!-- Aba 2: A Ohana -->
-            <div id="tab-ohana" class="tab-content">                <section id="videos" class="py-12">
+            <div id="tab-ohana" class="tab-content">
+                <section id="videos" class="py-12">
                     <h2 class="font-brand text-4xl md:text-5xl text-center mb-12 text-cyan-800">🎬 Recados da Galáxia 🌌</h2>
-                    <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
-                        <em>Diretamente das galáxias mais distantes ... 💫</em>
-                    </p>
-                     <div class="flex flex-wrap justify-center gap-6 md:gap-8 max-w-6xl mx-auto">
-                         <!-- Vídeos serão carregados dinamicamente via JavaScript -->
-                    </div>                </section>
-
-                <!-- Seção Especial da Vovó -->
+                    <div class="flex flex-wrap justify-center gap-8 px-4">
+                        <div class="video-card bg-[#FDF8E1] border-4 border-[#D2B48C] rounded-2xl p-6 text-center"> <h3 class="font-brand text-2xl text-cyan-900">Mensagem da Família</h3> <p class="text-sm text-gray-600 my-2">Uma surpresa da sua `Ohana` principal!</p> <a href="#" class="mt-4 inline-block bg-blue-500 text-white font-brand py-2 px-6 rounded-full hover:bg-blue-600 transition-colors text-lg shadow-lg">Ver Vídeo</a> </div>
+                        <div class="video-card bg-[#FDF8E1] border-4 border-[#D2B48C] rounded-2xl p-6 text-center"> <h3 class="font-brand text-2xl text-cyan-900">Depoimento dos Amigos</h3> <p class="text-sm text-gray-600 my-2">Seus amigos (e outros experimentos) mandaram um aloha!</p> <a href="#" class="mt-4 inline-block bg-pink-500 text-white font-brand py-2 px-6 rounded-full hover:bg-pink-600 transition-colors text-lg shadow-lg">Ver Vídeo</a> </div>
+                    </div>
+                </section>
+                
                 <section id="video-vovo-especial" class="py-12">
                     <div class="max-w-4xl mx-auto text-center">
-                        <h3 class="font-brand text-2xl md:text-3xl text-cyan-800 mb-8">� Segura o coração... �</h3>
-                        <div class="bg-gradient-to-br from-blue-50 to-red-50 p-8 rounded-3xl shadow-xl border-4 border-red-200">
-                            <video 
-                                controls 
-                                class="w-full max-w-2xl mx-auto rounded-2xl shadow-lg"
-                                poster=""
-                            >
-                                <source src="/stronda-lilo/FORMADA/vovo.mp4" type="video/mp4">
+                        <h3 class="font-brand text-2xl md:text-3xl text-cyan-800 mb-8">😭 Segura o coração... 😭</h3>
+                        <div class="bg-gradient-to-br from-blue-50 to-red-50 p-6 md:p-8 rounded-3xl shadow-xl border-4 border-red-200">
+                            <video controls class="w-full max-w-2xl mx-auto rounded-2xl shadow-lg">
+                                <source src="#" type="video/mp4">
                                 Seu navegador não suporta o elemento de vídeo.
                             </video>
-                            <p class="mt-6 text-gray-600 italic text-lg">
-                                Por essa eu tenho certeza que você não esperava 💙💙💙
-                            </p>
+                            <p class="mt-6 text-gray-600 italic text-lg">Por essa eu tenho certeza que você não esperava 💙�💙</p>
                         </div>
                     </div>
-                </section><section id="quote" class="py-16 text-center">
+                </section>
+
+                <section id="quote" class="py-16 text-center">
                     <div class="max-w-3xl mx-auto p-8 bg-white/70 backdrop-blur-sm rounded-2xl shadow-xl">
-                        <!-- Citação será carregada dinamicamente via JavaScript -->
-                    </div>                </section>
+                        <p class="text-2xl md:text-3xl font-light text-cyan-900 leading-relaxed">"Educação não transforma o mundo. Educação muda pessoas. Pessoas transformam o mundo."</p>
+                        <p class="mt-6 font-bold text-xl text-cyan-700">- Paulo Freire</p>
+                    </div>
+                </section>
             </div>
 
             <!-- Aba 3: Agora, vou te explicar tudo... -->
@@ -203,27 +177,18 @@
                 <section id="minha-explicacao" class="py-12">
                     <div class="max-w-4xl mx-auto text-center">
                         <h2 class="font-brand text-3xl md:text-4xl text-cyan-800 mb-8">💕 Chegou minha vez... 💕</h2>
-                        <div class="bg-gradient-to-br from-pink-50 to-purple-50 p-8 rounded-3xl shadow-xl border-4 border-pink-200 mb-12">
-                            <video 
-                                controls 
-                                class="w-full max-w-2xl mx-auto rounded-2xl shadow-lg"
-                                poster=""
-                            >
-                                <source src="/stronda-lilo/FORMADA/meuvideopraformada.mp4" type="video/mp4">
+                        <div class="bg-gradient-to-br from-pink-50 to-purple-50 p-6 md:p-8 rounded-3xl shadow-xl border-4 border-pink-200 mb-12">
+                            <video controls class="w-full max-w-2xl mx-auto rounded-2xl shadow-lg">
+                                <source src="#" type="video/mp4">
                                 Seu navegador não suporta o elemento de vídeo.
                             </video>
-                            <p class="mt-6 text-gray-600 italic text-lg">
-                                Um recado feito com todo o amor do mundo para celebrar essa conquista incrível! 🌺
-                            </p>
+                            <p class="mt-6 text-gray-600 italic text-lg">Um recado feito com todo o amor do mundo para celebrar essa conquista incrível! 🌺</p>
                         </div>
 
-                        <!-- Minha mensagem especial -->
-                        <div class="bg-white/90 p-8 rounded-3xl shadow-xl border-4 border-red-200">
+                        <div class="bg-white/90 p-8 rounded-3xl shadow-xl border-4 border-red-200 relative">
+                             <div class="absolute -left-4 -top-4 text-4xl transform -rotate-12">💕</div>
                             <div class="max-w-2xl mx-auto">
-                                <div class="absolute -left-4 -top-4 text-4xl">💕</div>
-                                <p class="text-gray-700 italic text-lg leading-relaxed">
-                                    "Parabéns, meu amor.. Você é incrível e é um privilégio eu aprender todos os dias com a melhor teacher desse mundo ❤️"
-                                </p>
+                                <p class="text-gray-700 italic text-lg leading-relaxed">"Parabéns, meu amor.. Você é incrível e é um privilégio eu aprender todos os dias com a melhor teacher desse mundo ❤️"</p>
                                 <p class="text-right font-bold text-red-600 mt-6 text-xl">- Seu Amor</p>
                             </div>
                         </div>
@@ -232,56 +197,63 @@
             </div>
         </main>
         
-        <!-- Rodapé -->
         <footer class="text-center py-10 mt-4 border-t-2 border-dashed border-cyan-300">
             <p class="font-brand text-3xl text-cyan-800">"`Ohana` quer dizer família."</p>
             <p class="font-brand text-3xl text-cyan-800">"Família quer dizer nunca abandonar ou esquecer."</p>
         </footer>
+    </div>
 
-    </div>    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-    <script src="data.js"></script>
-      <script>        document.addEventListener('DOMContentLoaded', async () => {
-            // --- Inicializar Conteúdo Dinâmico ---
-            await ContentManager.init();
-
-            // --- Lógica das Abas ---
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabContents = document.querySelectorAll('.tab-content');
 
             tabButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const tabName = button.dataset.tab;
-
-                    // Atualiza botões
-                    tabButtons.forEach(btn => {
-                        btn.classList.remove('active');
-                    });
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
-
-                    // Atualiza conteúdo
                     tabContents.forEach(content => {
-                        if (content.id === `tab-${tabName}`) {
-                            content.classList.add('active');
-                        } else {
-                            content.classList.remove('active');
-                        }
+                        content.classList.toggle('active', content.id === `tab-${tabName}`);
                     });
                 });
             });
 
-            // --- Lógica dos Confetes ---
+            // --- Lógica dos Confetes (CORRIGIDA) ---
             const confettiCanvas = document.getElementById('confetti-canvas');
-            const myConfetti = confetti.create(confettiCanvas, { resize: true, useWorker: true });
+            // Inicializa sem worker para maior compatibilidade
+            const myConfetti = confetti.create(confettiCanvas, {
+                resize: true,
+                useWorker: false // Desabilita o worker para evitar erros de ambiente
+            });
+            
             const tropicalColors = ['#00B4D8', '#48CAE4', '#90E0EF', '#ADE8F4', '#FF69B4', '#FFFFFF'];
             
             setTimeout(() => {
-                myConfetti({ particleCount: 200, spread: 180, origin: { y: 0.6 }, colors: tropicalColors });
+                if (myConfetti) {
+                    myConfetti({
+                        particleCount: 200,
+                        spread: 180,
+                        origin: { y: 0.6 },
+                        colors: tropicalColors
+                    });
+                }
             }, 500);
 
             // --- Lógica do Modal de Imagem ---
             const modal = document.getElementById('image-modal');
             const modalImg = document.getElementById('modal-img');
             const closeModal = document.getElementById('close-modal');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    modal.classList.remove('opacity-0', 'pointer-events-none');
+                    modalImg.src = item.src;
+                });
+            });
 
             function closeImageModal() {
                  modal.classList.add('opacity-0', 'pointer-events-none');
@@ -295,3 +267,4 @@
     </script>
 </body>
 </html>
+�
