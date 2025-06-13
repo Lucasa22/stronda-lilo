@@ -4,23 +4,14 @@ const siteData = {
     gallery: [],
 
     // Dados dos vídeos (carregados dinamicamente)
-    videos: [],
-
-    // Dados das mensagens
+    videos: [],    // Dados das mensagens
     messages: [
         {
-            text: "Lilo, seu esforço e dedicação são do tamanho do universo...",
-            author: "Mamãe e Papai",
-            emoji: "🌺",
-            position: "left",
-            authorColor: "text-blue-600"
-        },
-        {
-            text: "Amiga, parabéns! Lembro das nossas aventuras...",
-            author: "Sua Melhor Amiga",
-            emoji: "🌊",
-            position: "right",
-            authorColor: "text-pink-600"
+            text: "Parabéns, meu amor.. Você é incrível e é um privilégio eu aprender todos os dias com a melhor teacher desse mundo ❤️",
+            author: "Seu Amor",
+            emoji: "💕",
+            position: "center",
+            authorColor: "text-red-600"
         }
     ],
 
@@ -327,13 +318,13 @@ const ContentManager = {
             
             imgContainer.appendChild(img);
             galleryContainer.appendChild(imgContainer);
-        });
-
-        // Re-adicionar event listeners para o modal
+        });        // Re-adicionar event listeners para o modal
         this.attachGalleryListeners();
-    },    // Renderizar vídeos
+    },
+
+    // Renderizar vídeos
     renderVideos: function() {
-        const videosContainer = document.querySelector('#videos .grid');
+        const videosContainer = document.querySelector('#videos .flex');
         if (!videosContainer) return;
         
         videosContainer.innerHTML = '';
@@ -342,7 +333,7 @@ const ContentManager = {
             const videoInfo = VideoManager.processVideoUrl(video.url);
             
             const videoCard = document.createElement('div');
-            videoCard.className = `bg-[#FDF8E1] border-4 border-[#D2B48C] rounded-2xl p-6 text-center transform ${video.hoverRotation} transition-transform`;
+            videoCard.className = `video-card bg-gradient-to-br from-[#FDF8E1] to-[#F0F7FF] border-4 border-[#D2B48C] rounded-3xl p-6 text-center shadow-xl hover:shadow-2xl backdrop-blur-sm`;
             
             // Criar conteúdo baseado no tipo de vídeo
             let videoContent = '';
@@ -355,7 +346,7 @@ const ContentManager = {
                                 height="200" 
                                 frameborder="0" 
                                 allow="autoplay"
-                                class="rounded-lg">
+                                class="rounded-xl shadow-md">
                         </iframe>
                     </div>
                 `;
@@ -368,27 +359,31 @@ const ContentManager = {
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen
-                                class="rounded-lg">
+                                class="rounded-xl shadow-md">
                         </iframe>
                     </div>
                 `;
             } else {
-                // Para links diretos, mostrar apenas botão
-                videoContent = '';
+                // Para links diretos, adicionar ícone de play grande
+                videoContent = `
+                    <div class="mb-4 flex items-center justify-center h-40 bg-gradient-to-br from-cyan-100 to-blue-100 rounded-xl border-2 border-dashed border-cyan-300">
+                        <div class="text-6xl text-cyan-600">🎬</div>
+                    </div>
+                `;
             }
             
             videoCard.innerHTML = `
                 ${videoContent}
-                <h3 class="font-brand text-2xl text-cyan-900 mb-2">
+                <h3 class="font-brand text-xl text-cyan-900 mb-3 leading-tight">
                     ${videoInfo.icon} ${video.title}
                 </h3>
-                <p class="text-sm text-gray-600 mb-4">${video.description}</p>
+                <p class="text-sm text-gray-600 mb-5 line-clamp-3">${video.description}</p>
                 ${videoInfo.source === 'drive' || videoInfo.source === 'youtube' ? 
-                    `<a href="${videoInfo.original}" target="_blank" class="inline-block bg-${video.color}-500 text-white font-brand py-2 px-4 rounded-full hover:bg-${video.color}-600 transition-colors text-sm shadow-lg">
-                        Abrir ${videoInfo.source === 'drive' ? 'no Drive' : 'no YouTube'}
+                    `<a href="${videoInfo.original}" target="_blank" class="inline-block bg-gradient-to-r from-${video.color}-400 to-${video.color}-600 text-white font-brand py-3 px-6 rounded-full hover:from-${video.color}-500 hover:to-${video.color}-700 transition-all duration-300 text-sm shadow-lg transform hover:scale-105">
+                        ✨ Abrir ${videoInfo.source === 'drive' ? 'no Drive' : 'no YouTube'}
                     </a>` :
-                    `<a href="${video.url}" target="_blank" class="inline-block bg-${video.color}-500 text-white font-brand py-2 px-6 rounded-full hover:bg-${video.color}-600 transition-colors text-lg shadow-lg">
-                        Ver Vídeo
+                    `<a href="${video.url}" target="_blank" class="inline-block bg-gradient-to-r from-${video.color}-400 to-${video.color}-600 text-white font-brand py-3 px-8 rounded-full hover:from-${video.color}-500 hover:to-${video.color}-700 transition-all duration-300 text-lg shadow-lg transform hover:scale-105">
+                        🎥 Ver Vídeo
                     </a>`
                 }
             `;

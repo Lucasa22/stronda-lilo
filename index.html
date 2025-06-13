@@ -23,14 +23,43 @@
         }
         .font-brand {
             font-family: 'Luckiest Guy', cursive;
-        }
-        .text-gradient-tropical {
+        }        .text-gradient-tropical {
             background: linear-gradient(45deg, #00B4D8, #0077B6, #03045E);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .modal {
             transition: opacity 0.25s ease;
+        }
+        
+        /* Estilos divertidos para os cards de vídeo */
+        .video-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: center;
+            width: 280px;
+            min-height: 200px;
+        }
+        .video-card:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 180, 216, 0.3);
+        }
+        .video-card:nth-child(odd) {
+            animation: float-left 3s ease-in-out infinite;
+        }
+        .video-card:nth-child(even) {
+            animation: float-right 3s ease-in-out infinite reverse;
+        }
+        @keyframes float-left {
+            0%, 100% { transform: translateY(0px) rotate(-1deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+        @keyframes float-right {
+            0%, 100% { transform: translateY(0px) rotate(1deg); }
+            50% { transform: translateY(-10px) rotate(-1deg); }
+        }
+        .video-card:hover {
+            animation: none !important;
         }
         /* Estilos para as Abas */
         .tab-button {
@@ -141,11 +170,15 @@
 
             <!-- Aba 2: A Ohana -->
             <div id="tab-ohana" class="tab-content">                <section id="videos" class="py-12">
-                    <h2 class="font-brand text-4xl md:text-5xl text-center mb-12 text-cyan-800">Recados da Galáxia</h2>
-                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8">
+                    <h2 class="font-brand text-4xl md:text-5xl text-center mb-12 text-cyan-800">🎬 Recados da Galáxia 🌌</h2>
+                    <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+                        <em>Uma coleção especial de mensagens vindas de todos os cantos da galáxia para celebrar nossa Lilo! 
+                        Clique nos cards para assistir cada recado cheio de amor e carinho! 💫</em>
+                    </p>
+                     <div class="flex flex-wrap justify-center gap-6 md:gap-8 max-w-6xl mx-auto">
                          <!-- Vídeos serão carregados dinamicamente via JavaScript -->
                     </div>
-                </section>                <section id="messages" class="py-12">
+                </section><section id="messages" class="py-12">
                     <h2 class="font-brand text-4xl md:text-5xl text-center mb-12 text-cyan-800">Mural de `Ohana`</h2>
                     <div class="space-y-8 max-w-2xl mx-auto">
                         <!-- Mensagens serão carregadas dinamicamente via JavaScript -->
