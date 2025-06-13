@@ -1,69 +1,71 @@
 {
-  "videos": {    "recado-lucas": {
-      "titulo": "Recado do Lucas Antunes",
-      "descricao": "Uma mensagem especial do Lucas para a nossa formanda! Carinho e parabéns vindos diretamente do coração.",
-      "sessao": "recado-lucas",
-      "link": "/stronda-lilo/FORMADA/Vídeo de Lucas Antunes.mp4",
-      "cor": "blue",
-      "rotacao": "hover:-rotate-2"
-    },
+  "videos": {
     "recado-lacroso": {
       "titulo": "Momento Lacroso",
-      "descricao": "Um vídeo emocionante para celebrar essa conquista tão especial. Prepare os lencinhos!",
+      "descricao": "LACROUUUUU LILO!",
       "sessao": "recado-lacroso", 
       "link": "/stronda-lilo/FORMADA/Lacroso.mp4",
       "cor": "pink",
       "rotacao": "hover:rotate-2"
-    },
-    "recado-familia-1": {
-      "titulo": "Recado da Família - Parte 1",
-      "descricao": "Mensagem carinhosa da família celebrando a formatura da nossa Lilo!",
-      "sessao": "recado-familia-1",
+    },    
+    "recado-professora": {
+      "titulo": "De professora pra (agora) professora",
+      "descricao": "Porque toda teacher já foi student.",
+      "sessao": "recado-professora",
       "link": "/stronda-lilo/FORMADA/VID-20250611-WA0030.mp4",
       "cor": "green",
       "rotacao": "hover:-rotate-1"
-    },
-    "recado-familia-2": {
-      "titulo": "Recado da Família - Parte 2",
-      "descricao": "Mais amor e carinho da família para nossa pedagoga recém-formada!",
-      "sessao": "recado-familia-2",
+    },    
+    "recado-tia-cris": {
+      "titulo": "Um recadinho ...",
+      "descricao": "Uma mensagem cheia de amor e orgulho da Tia Cris para celebrar essa conquista especial da nossa Lilo!",
+      "sessao": "recado-tia-cris",
       "link": "/stronda-lilo/FORMADA/VID-20250611-WA0031.mp4",
       "cor": "purple",
       "rotacao": "hover:rotate-1"
     },
-    "recado-familia-3": {
-      "titulo": "Recado da Família - Parte 3",
-      "descricao": "Continuação dos parabéns especiais da família para a nossa estrela!",
-      "sessao": "recado-familia-3",
+    "recado-tia-rose": {
+      "titulo": "Mais um recadinho ...",
+      "descricao": "Uma mensagem especial e carinhosa da Tia Rose para celebrar essa conquista incrível da nossa Lilo!",
+      "sessao": "recado-tia-rose",
       "link": "/stronda-lilo/FORMADA/VID-20250611-WA0032.mp4",
       "cor": "yellow",
       "rotacao": "hover:-rotate-2"
-    },
-    "momento-especial-1": {
-      "titulo": "Momento Especial",
-      "descricao": "Um momento único capturado para eternizar essa conquista incrível!",
-      "sessao": "momento-especial-1",
+    },    
+    "recado-mari-vini": {
+      "titulo": "Abigos, cadê vocês?",
+      "descricao": "Ohana! 💙👫",
+      "sessao": "recado-mari-vini",
       "link": "/stronda-lilo/FORMADA/VID-20250613-WA0002.mp4",
       "cor": "indigo",
       "rotacao": "hover:rotate-2"
     },
-    "celebracao-final": {
-      "titulo": "Celebração Final",
-      "descricao": "O gran finale! Uma celebração à altura dessa conquista maravilhosa!",
-      "sessao": "celebracao-final",
+    "recado-mae-irma": {
+      "titulo": "Olha quem chegou ...",
+      "descricao": "Claro que elas não iam ficar de fora dessa, né! 💕👩‍👧‍👧",
+      "sessao": "recado-mae-irma",
       "link": "/stronda-lilo/FORMADA/VID-20250613-WA0003.mp4",
       "cor": "red",
       "rotacao": "hover:-rotate-1"
     },
-    "arquivo-especial": {
-      "titulo": "Arquivo Especial",
-      "descricao": "Um momento precioso guardado nos arquivos da família para sempre!",
-      "sessao": "arquivo-especial",
+    "recado-stitch": {
+      "titulo": "E não poderia faltar o grande companheiro da Lilo, não é mesmo?",
+      "descricao": "O mais querido da galáxia! Porque na Ohana ninguém fica para trás! 🌺👽",
+      "sessao": "recado-stitch",
       "link": "/stronda-lilo/FORMADA/1749744658306.mp4",
       "cor": "cyan",
       "rotacao": "hover:rotate-1"
+    },    
+    "recado-vovo": {
+      "titulo": "Segura o coração...",
+      "descricao": "Por essa eu tenho certeza que você não esperava 💙💙💙",
+      "sessao": "recado-vovo",
+      "link": "/stronda-lilo/FORMADA/vovo.mp4",
+      "cor": "red",
+      "rotacao": "hover:-rotate-2"
     }
-  }, "imagens": {
+  }, 
+  "imagens": {
     "primeiros-passos-balde": {
       "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0012.jpg",
       "alt": "Bebê de fralda tentando escalar um balde preto dentro de casa.",
