@@ -63,14 +63,14 @@
       "cor": "cyan",
       "rotacao": "hover:rotate-1"
     }
-  },  "imagens": {
+  }, "imagens": {
     "primeiros-passos-balde": {
       "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0012.jpg",
       "alt": "Bebê de fralda tentando escalar um balde preto dentro de casa.",
       "categoria": "infancia",
       "capitulo": 1,
       "ordem": 1,
-      "historia": "Toda grande jornada começa com um pequeno passo... ou com a tentativa de entrar em um balde. As primeiras explorações do mundo!"
+      "historia": "Missão: dominar a nave-balde. O primeiro de muitos experimentos para testar os limites da física e da paciência dos pais. A jornada intergaláctica começou aqui!"
     },
     "doce-descoberta": {
       "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0009.jpg",
@@ -78,7 +78,7 @@
       "categoria": "infancia",
       "capitulo": 1,
       "ordem": 2,
-      "historia": "Aquele momento mágico de descobrir os prazeres da vida, como um sorvete (ou pelo menos a casquinha) em um dia de sol."
+      "historia": "Primeiro contato com um artefato alienígena saboroso. Análise sensorial em andamento. Resultado: felicidade pura e um pouco de sujeira."
     },
     "rainha-do-mercado": {
       "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0014.jpg",
@@ -86,7 +86,7 @@
       "categoria": "infancia",
       "capitulo": 1,
       "ordem": 3,
-      "historia": "O melhor lugar do supermercado! Um camarote particular para supervisionar as compras e garantir que os itens essenciais (doces) não sejam esquecidos."
+      "historia": "No comando da nave-carrinho, supervisionando a coleta de suprimentos. A missão era clara: garantir o carregamento de doces e evitar vegetais suspeitos."
     },
     "banho-de-tanque": {
       "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0010.jpg",
@@ -94,7 +94,7 @@
       "categoria": "infancia",
       "capitulo": 1,
       "ordem": 4,
-      "historia": "Quem precisa de uma banheira de luxo quando se tem um tanque espaçoso? Diversão garantida e um clássico da infância."
+      "historia": "Quem precisa do oceano Pacífico quando se tem uma lagoa particular? Um verdadeiro 'spa havaiano' para recarregar as energias após um dia de aventuras."
     },
     "aventura-no-campo": {
       "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0013.jpg",
@@ -102,7 +102,7 @@
       "categoria": "infancia",
       "capitulo": 1,
       "ordem": 5,
-      "historia": "A simplicidade e a alegria de brincar ao ar livre, onde qualquer estrutura de madeira vira o melhor parque de diversões."
+      "historia": "Testando a teoria da gravidade de um ângulo diferente. A prova de que a diversão não precisa de manual de instruções, só de um bom lugar para ficar de cabeça para baixo."
     },
     "coelhinha-da-pascoa": {
       "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0006.jpg",
@@ -110,7 +110,7 @@
       "categoria": "eventos",
       "capitulo": 2,
       "ordem": 1,
-      "historia": "Em modo coelhinha para alguma apresentação da escola ou para a Páscoa. Uma fofura com braços cruzados e olhar determinado!"
+      "historia": "Operação 'Coelhinho Fofinho'. Disfarce ativado para uma missão secreta na escola. A carinha é de anjo, mas a determinação é de quem vai salvar a galáxia."
     },
     "caipirinha-no-arraia": {
       "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0007.jpg",
@@ -118,7 +118,7 @@
       "categoria": "eventos",
       "capitulo": 2,
       "ordem": 2,
-      "historia": "Pronta para dançar quadrilha! O charme das festas juninas da escola, com direito a bochechas pintadas e tudo."
+      "historia": "Embaixadora da alegria em missão diplomática na festa junina. Pronta para ensinar aos terráqueos o verdadeiro significado de 'pular a fogueira'."
     },
     "primeiro-diploma": {
       "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0011.jpg",
@@ -126,7 +126,15 @@
       "categoria": "eventos",
       "capitulo": 2,
       "ordem": 3,
-      "historia": "A primeira de muitas conquistas! A formatura da educação infantil, um marco de muito orgulho para toda a família."
+      "historia": "O primeiro grande troféu! Mal sabia o mundo que este era apenas o trailer da superprodução que seria a sua jornada acadêmica. O aquecimento para a formatura final!"
+    },
+    "liberdade-na-montanha": {
+      "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0008.jpg",
+      "alt": "Mulher de braços abertos no cume de uma montanha, com um vale verde e uma cachoeira ao fundo.",
+      "categoria": "viagens",
+      "capitulo": 2,
+      "ordem": 4,
+      "historia": "Conquistando um novo planeta... ou pelo menos o topo dele! Absorvendo a energia da Terra para a próxima fase da missão. A vista é de outro mundo!"
     },
     "amor-de-geracoes": {
       "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0005.jpg",
@@ -134,39 +142,31 @@
       "categoria": "familia",
       "capitulo": 3,
       "ordem": 1,
-      "historia": "Um retrato de carinho e conexão. A força e o amor que unem gerações, guardados em uma memória especial com os avós."
-    },
-    "liberdade-na-montanha": {
-      "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0008.jpg",
-      "alt": "Mulher de braços abertos no cume de uma montanha, com um vale verde e uma cachoeira ao fundo.",
-      "categoria": "viagens",
-      "capitulo": 3,
-      "ordem": 2,
-      "historia": "Conectando-se com a natureza e celebrando a liberdade no topo do mundo. Uma vista espetacular para renovar as energias."
+      "historia": "A prova viva de que 'Ohana' é a força mais poderosa do universo. Um elo de amor que atravessa gerações, mais forte que qualquer experimento."
     },
     "aquarela-gato-preto": {
       "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0015.jpg",
       "alt": "Pintura em aquarela de um gato preto com olhos amarelos expressivos.",
       "categoria": "arte",
-      "capitulo": 4,
-      "ordem": 1,
-      "historia": "Uma homenagem artística ao companheiro de quatro patas. A intensidade do olhar felino capturada em aquarela."
+      "capitulo": 3,
+      "ordem": 2,
+      "historia": "Retrato do fiel companheiro de caos. Uma obra de arte que captura a alma misteriosa e o olhar de quem já aprontou (ou está planejando a próxima). Um mini-Stitch felino."
     },
     "girassois-no-campo": {
       "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0016.jpg",
       "alt": "Pintura de um campo de girassóis vibrantes sob um céu azul.",
       "categoria": "arte",
-      "capitulo": 4,
-      "ordem": 2,
-      "historia": "Inspirado na beleza e na energia dos girassóis, esta pintura busca trazer um pouco de luz e alegria para qualquer ambiente."
+      "capitulo": 3,
+      "ordem": 3,
+      "historia": "Uma explosão de energia solar na tela! Assim como os girassóis seguem o sol, a artista segue a alegria. Uma pintura que é pura luz e otimismo."
     },
     "momento-formatura": {
       "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0017.jpg",
       "alt": "Momento especial da formatura, celebrando a conquista do diploma.",
       "categoria": "formatura",
       "capitulo": 4,
-      "ordem": 3,
-      "historia": "O momento que todos estávamos esperando! A conquista do diploma, o resultado de tanto esforço e dedicação. O futuro começa aqui!"
+      "ordem": 1,
+      "historia": "Missão Pedagogia: CONCLUÍDA! Após anos de batalhas épicas contra TCCs e provas, a nossa heroína emerge vitoriosa com seu merecido diploma. O universo que se prepare!"
     }
   }
 }
