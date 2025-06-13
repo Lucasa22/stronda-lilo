@@ -1,13 +1,14 @@
 {
-  "videos": {   
-    "recado-stitch": {
+  "videos": {     "recado-stitch": {
       "titulo": "E não poderia faltar o grande companheiro da Lilo, não é mesmo?",
       "descricao": "O mais querido da galáxia! Porque na Ohana ninguém fica para trás! 🌺👽",
       "sessao": "recado-stitch",
       "link": "/stronda-lilo/FORMADA/1749744658306.mp4",
       "cor": "cyan",
-      "rotacao": "hover:rotate-1"
-    },   
+      "rotacao": "hover:rotate-1",
+      "autoplay": true,
+      "tipo": "gif-like"
+    },
     "recado-tia-cris": {
       "titulo": "Um recadinho ...",
       "descricao": "Uma mensagem cheia de amor e orgulho da Tia Cris para celebrar essa conquista especial da nossa Lilo!",

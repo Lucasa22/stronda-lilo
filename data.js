@@ -362,14 +362,32 @@ const ContentManager = {
                                 class="rounded-xl shadow-md">
                         </iframe>
                     </div>
-                `;
-            } else {
-                // Para links diretos, adicionar ícone de play grande
-                videoContent = `
-                    <div class="mb-4 flex items-center justify-center h-40 bg-gradient-to-br from-cyan-100 to-blue-100 rounded-xl border-2 border-dashed border-cyan-300">
-                        <div class="text-6xl text-cyan-600">🎬</div>
-                    </div>
-                `;
+                `;            } else {
+                // Verificar se é um vídeo com autoplay (tipo GIF)
+                if (video.autoplay && video.tipo === 'gif-like') {
+                    videoContent = `
+                        <div class="mb-4">
+                            <video 
+                                autoplay 
+                                loop 
+                                muted 
+                                playsinline
+                                class="w-full h-48 object-cover rounded-xl shadow-md"
+                                poster=""
+                            >
+                                <source src="${video.url}" type="video/mp4">
+                                Seu navegador não suporta o elemento de vídeo.
+                            </video>
+                        </div>
+                    `;
+                } else {
+                    // Para links diretos normais, adicionar ícone de play grande
+                    videoContent = `
+                        <div class="mb-4 flex items-center justify-center h-40 bg-gradient-to-br from-cyan-100 to-blue-100 rounded-xl border-2 border-dashed border-cyan-300">
+                            <div class="text-6xl text-cyan-600">🎬</div>
+                        </div>
+                    `;
+                }
             }
             
             videoCard.innerHTML = `
@@ -377,14 +395,17 @@ const ContentManager = {
                 <h3 class="font-brand text-xl text-cyan-900 mb-3 leading-tight">
                     ${videoInfo.icon} ${video.title}
                 </h3>
-                <p class="text-sm text-gray-600 mb-5 line-clamp-3">${video.description}</p>
-                ${videoInfo.source === 'drive' || videoInfo.source === 'youtube' ? 
+                <p class="text-sm text-gray-600 mb-5 line-clamp-3">${video.description}</p>                ${videoInfo.source === 'drive' || videoInfo.source === 'youtube' ? 
                     `<a href="${videoInfo.original}" target="_blank" class="inline-block bg-gradient-to-r from-${video.color}-400 to-${video.color}-600 text-white font-brand py-3 px-6 rounded-full hover:from-${video.color}-500 hover:to-${video.color}-700 transition-all duration-300 text-sm shadow-lg transform hover:scale-105">
                         ✨ Abrir ${videoInfo.source === 'drive' ? 'no Drive' : 'no YouTube'}
                     </a>` :
-                    `<a href="${video.url}" target="_blank" class="inline-block bg-gradient-to-r from-${video.color}-400 to-${video.color}-600 text-white font-brand py-3 px-8 rounded-full hover:from-${video.color}-500 hover:to-${video.color}-700 transition-all duration-300 text-lg shadow-lg transform hover:scale-105">
-                        🎥 Ver Vídeo
-                    </a>`
+                    (video.autoplay && video.tipo === 'gif-like') ? 
+                        `<p class="text-xs text-cyan-600 font-brand">
+                            🌀 Reproduzindo automaticamente
+                        </p>` :
+                        `<a href="${video.url}" target="_blank" class="inline-block bg-gradient-to-r from-${video.color}-400 to-${video.color}-600 text-white font-brand py-3 px-8 rounded-full hover:from-${video.color}-500 hover:to-${video.color}-700 transition-all duration-300 text-lg shadow-lg transform hover:scale-105">
+                            🎥 Ver Vídeo
+                        </a>`
                 }
             `;
             videosContainer.appendChild(videoCard);
