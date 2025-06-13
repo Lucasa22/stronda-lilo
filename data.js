@@ -345,14 +345,33 @@ const ContentManager = {
         this.attachGalleryListeners();
     },
 
-    // Renderizar vídeos
+    // Renderizar vídeo do Stitch no header
+    renderStitchHeader: function() {
+        const stitchVideo = siteData.videos.find(video => video.sessao === 'recado-stitch');
+        if (stitchVideo) {
+            const stitchVideoElement = document.querySelector('#stitch-video source');
+            if (stitchVideoElement) {
+                stitchVideoElement.src = stitchVideo.url;
+                // Recarregar o vídeo para aplicar a nova source
+                const video = document.querySelector('#stitch-video');
+                if (video) {
+                    video.load();
+                }
+            }
+        }
+    },
+
+    // Renderizar vídeos (excluindo o Stitch que vai no header)
     renderVideos: function() {
         const videosContainer = document.querySelector('#videos .flex');
         if (!videosContainer) return;
         
         videosContainer.innerHTML = '';
         
-        siteData.videos.forEach(video => {
+        // Filtrar o vídeo do Stitch para não aparecer na lista principal
+        const videosParaExibir = siteData.videos.filter(video => video.sessao !== 'recado-stitch');
+        
+        videosParaExibir.forEach(video => {
             const videoInfo = VideoManager.processVideoUrl(video.url);
             
             const videoCard = document.createElement('div');
@@ -433,16 +452,22 @@ const ContentManager = {
             `;
             videosContainer.appendChild(videoCard);
         });
-    },
-
-    // Renderizar vídeos especiais (vovó e usuário)
+    },    // Renderizar vídeos especiais (vovó e usuário)
     renderVideosEspeciais: function() {
+        console.log('=== RENDERIZANDO VÍDEOS ESPECIAIS ===');
+        console.log('Vídeos especiais carregados:', siteData.videosEspeciais);
+        
         // Renderizar vídeo da vovó
         if (siteData.videosEspeciais.vovo) {
             const vovoSection = document.querySelector('#video-vovo-especial video source');
             if (vovoSection) {
                 vovoSection.src = siteData.videosEspeciais.vovo.link;
+                console.log('Vídeo da vovó configurado:', siteData.videosEspeciais.vovo.link);
+            } else {
+                console.error('Elemento de vídeo da vovó não encontrado');
             }
+        } else {
+            console.error('Dados do vídeo da vovó não carregados');
         }
         
         // Renderizar vídeo do usuário
@@ -450,7 +475,12 @@ const ContentManager = {
             const usuarioSection = document.querySelector('#minha-explicacao video source');
             if (usuarioSection) {
                 usuarioSection.src = siteData.videosEspeciais.usuario.link;
+                console.log('Vídeo do usuário configurado:', siteData.videosEspeciais.usuario.link);
+            } else {
+                console.error('Elemento de vídeo do usuário não encontrado');
             }
+        } else {
+            console.error('Dados do vídeo do usuário não carregados');
         }
     },
 
@@ -583,6 +613,7 @@ const ContentManager = {
         
         // Renderizar o conteúdo
         this.renderGallery();
+        this.renderStitchHeader();
         this.renderVideos();
         this.renderVideosEspeciais();
         this.renderMessages();
