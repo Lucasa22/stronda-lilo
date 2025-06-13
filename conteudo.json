@@ -48,24 +48,15 @@
       "link": "/stronda-lilo/FORMADA/VID-20250613-WA0003.mp4",
       "cor": "red",
       "rotacao": "hover:-rotate-1"
-    },
-    "recado-lacroso": {
+    },    "recado-lacroso": {
       "titulo": "Momento Lacroso",
       "descricao": "LACROUUUUU LILO!",
       "sessao": "recado-lacroso", 
       "link": "/stronda-lilo/FORMADA/Lacroso.mp4",
       "cor": "pink",
       "rotacao": "hover:rotate-2"
-    }, 
-    "recado-vovo": {
-      "titulo": "Segura o coração...",
-      "descricao": "Por essa eu tenho certeza que você não esperava 💙💙💙",
-      "sessao": "recado-vovo",
-      "link": "/stronda-lilo/FORMADA/vovo.mp4",
-      "cor": "red",
-      "rotacao": "hover:-rotate-2"
     }
-  }, 
+  },
   "imagens": {
     "primeiros-passos-balde": {
       "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0012.jpg",
