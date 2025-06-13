@@ -313,8 +313,7 @@ const ContentManager = {
             }
             return 0;
         });
-        
-        imagensOrdenadas.forEach((item, index) => {
+          imagensOrdenadas.forEach((item, index) => {
             const imgContainer = document.createElement('div');
             imgContainer.className = 'relative group';
             
@@ -323,25 +322,27 @@ const ContentManager = {
             img.alt = item.alt;
             img.className = 'gallery-item w-full h-auto rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer object-cover aspect-square border-4 border-white';
             
-            // Adicionar número da ordem se disponível
-            if (item.ordem) {
-                const orderBadge = document.createElement('div');
-                orderBadge.className = 'absolute top-2 left-2 bg-cyan-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold';
-                orderBadge.textContent = item.ordem;
-                imgContainer.appendChild(orderBadge);
-            }
+            // Números de teste galácticos
+            const numeroTeste = Math.floor(Math.random() * 9999) + 1000;
+            const prefixosGalacticos = [
+                'EXP-627', 'TESTE-', 'LAB-', 'PROTO-', 'SAMPLE-', 'SPEC-', 'DATA-', 'FILE-'
+            ];
+            const coresNumero = [
+                'bg-cyan-500', 'bg-pink-500', 'bg-purple-500', 'bg-green-500', 
+                'bg-yellow-500', 'bg-red-500', 'bg-indigo-500', 'bg-orange-500'
+            ];
             
-            // Adicionar overlay com história ao passar o mouse
-            if (item.historia) {
-                const overlay = document.createElement('div');
-                overlay.className = 'absolute inset-0 bg-black bg-opacity-80 text-white p-3 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-center';
-                overlay.innerHTML = `<p class="text-xs leading-tight">${item.historia}</p>`;
-                imgContainer.appendChild(overlay);
-            }
+            const prefixo = prefixosGalacticos[index % prefixosGalacticos.length];
+            const cor = coresNumero[index % coresNumero.length];
             
+            const badge = document.createElement('div');
+            badge.className = `absolute top-2 left-2 ${cor} text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg transform rotate-12 group-hover:rotate-0 transition-transform duration-300 border-2 border-white`;
+            badge.textContent = `${prefixo}${numeroTeste}`;
+            
+            imgContainer.appendChild(badge);
             imgContainer.appendChild(img);
             galleryContainer.appendChild(imgContainer);
-        });        // Re-adicionar event listeners para o modal
+        });// Re-adicionar event listeners para o modal
         this.attachGalleryListeners();
     },
 
