@@ -32,8 +32,7 @@
         .modal {
             transition: opacity 0.25s ease;
         }
-        
-        /* Estilos divertidos para os cards de vídeo */
+          /* Estilos divertidos para os cards de vídeo */
         .video-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             transform-origin: center;
@@ -41,25 +40,23 @@
             min-height: 200px;
         }
         .video-card:hover {
-            transform: translateY(-8px) scale(1.05);
+            transform: translateY(-8px) scale(1.05) !important;
             box-shadow: 0 20px 40px rgba(0, 180, 216, 0.3);
+            animation-play-state: paused !important;
         }
         .video-card:nth-child(odd) {
-            animation: float-left 3s ease-in-out infinite;
+            animation: float-left 4s ease-in-out infinite;
         }
         .video-card:nth-child(even) {
-            animation: float-right 3s ease-in-out infinite reverse;
+            animation: float-right 4s ease-in-out infinite;
         }
         @keyframes float-left {
-            0%, 100% { transform: translateY(0px) rotate(-1deg); }
-            50% { transform: translateY(-10px) rotate(1deg); }
+            0%, 100% { transform: translateY(0px) rotate(-1.5deg); }
+            50% { transform: translateY(-10px) rotate(1.5deg); }
         }
         @keyframes float-right {
-            0%, 100% { transform: translateY(0px) rotate(1deg); }
-            50% { transform: translateY(-10px) rotate(-1deg); }
-        }
-        .video-card:hover {
-            animation: none !important;
+            0%, 100% { transform: translateY(0px) rotate(1.5deg); }
+            50% { transform: translateY(-10px) rotate(-1.5deg); }
         }
         /* Estilos para as Abas */
         .tab-button {

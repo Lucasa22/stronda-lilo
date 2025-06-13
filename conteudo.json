@@ -1,21 +1,13 @@
 {
-  "videos": {
-    "recado-lacroso": {
-      "titulo": "Momento Lacroso",
-      "descricao": "LACROUUUUU LILO!",
-      "sessao": "recado-lacroso", 
-      "link": "/stronda-lilo/FORMADA/Lacroso.mp4",
-      "cor": "pink",
-      "rotacao": "hover:rotate-2"
-    },    
-    "recado-professora": {
-      "titulo": "De professora pra (agora) professora",
-      "descricao": "Porque toda teacher já foi student.",
-      "sessao": "recado-professora",
-      "link": "/stronda-lilo/FORMADA/VID-20250611-WA0030.mp4",
-      "cor": "green",
-      "rotacao": "hover:-rotate-1"
-    },    
+  "videos": {   
+    "recado-stitch": {
+      "titulo": "E não poderia faltar o grande companheiro da Lilo, não é mesmo?",
+      "descricao": "O mais querido da galáxia! Porque na Ohana ninguém fica para trás! 🌺👽",
+      "sessao": "recado-stitch",
+      "link": "/stronda-lilo/FORMADA/1749744658306.mp4",
+      "cor": "cyan",
+      "rotacao": "hover:rotate-1"
+    },   
     "recado-tia-cris": {
       "titulo": "Um recadinho ...",
       "descricao": "Uma mensagem cheia de amor e orgulho da Tia Cris para celebrar essa conquista especial da nossa Lilo!",
@@ -31,7 +23,15 @@
       "link": "/stronda-lilo/FORMADA/VID-20250611-WA0032.mp4",
       "cor": "yellow",
       "rotacao": "hover:-rotate-2"
-    },    
+    }, 
+    "recado-professora": {
+      "titulo": "De professora pra (agora) professora",
+      "descricao": "Porque toda teacher já foi student.",
+      "sessao": "recado-professora",
+      "link": "/stronda-lilo/FORMADA/VID-20250611-WA0030.mp4",
+      "cor": "green",
+      "rotacao": "hover:-rotate-1"
+    },        
     "recado-mari-vini": {
       "titulo": "Abigos, cadê vocês?",
       "descricao": "Ohana! 💙👫",
@@ -48,14 +48,14 @@
       "cor": "red",
       "rotacao": "hover:-rotate-1"
     },
-    "recado-stitch": {
-      "titulo": "E não poderia faltar o grande companheiro da Lilo, não é mesmo?",
-      "descricao": "O mais querido da galáxia! Porque na Ohana ninguém fica para trás! 🌺👽",
-      "sessao": "recado-stitch",
-      "link": "/stronda-lilo/FORMADA/1749744658306.mp4",
-      "cor": "cyan",
-      "rotacao": "hover:rotate-1"
-    },    
+    "recado-lacroso": {
+      "titulo": "Momento Lacroso",
+      "descricao": "LACROUUUUU LILO!",
+      "sessao": "recado-lacroso", 
+      "link": "/stronda-lilo/FORMADA/Lacroso.mp4",
+      "cor": "pink",
+      "rotacao": "hover:rotate-2"
+    }, 
     "recado-vovo": {
       "titulo": "Segura o coração...",
       "descricao": "Por essa eu tenho certeza que você não esperava 💙💙💙",
