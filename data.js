@@ -443,13 +443,13 @@ const ContentManager = {
                     (video.autoplay && video.tipo === 'gif-like') ? 
                         `<p class="text-xs text-cyan-600 font-brand">
                             🌀 Reproduzindo automaticamente
-                        </p>` :
-                        `<a href="${video.url}" target="_blank" class="inline-block bg-gradient-to-r from-${video.color}-400 to-${video.color}-600 text-white font-brand py-3 px-8 rounded-full hover:from-${video.color}-500 hover:to-${video.color}-700 transition-all duration-300 text-lg shadow-lg transform hover:scale-105">
+                        </p>` :                        `<a href="${video.url}" target="_blank" class="inline-block bg-gradient-to-r from-${video.color}-400 to-${video.color}-600 text-white font-brand py-3 px-8 rounded-full hover:from-${video.color}-500 hover:to-${video.color}-700 transition-all duration-300 text-lg shadow-lg transform hover:scale-105">
                             🎥 Ver Vídeo
                         </a>`
                 }
             `;
-            videosContainer.appendChild(videoCard);        });
+            videosContainer.appendChild(videoCard);
+        });
     },
 
     // Renderizar vídeos especiais (vovó e usuário)
