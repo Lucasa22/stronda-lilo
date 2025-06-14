@@ -33,6 +33,50 @@
             transition: opacity 0.25s ease;
         }
         
+        /* Estilo especial para ficha do experimento */
+        .ficha-experimento {
+            background: linear-gradient(135deg, #fefbf3 0%, #f8f4e8 100%);
+            border: 3px dashed #d2b48c;
+            position: relative;
+            transform: rotate(-0.5deg);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        }
+        
+        .ficha-experimento::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 8px,
+                rgba(210, 180, 140, 0.1) 8px,
+                rgba(210, 180, 140, 0.1) 16px
+            );
+            z-index: -1;
+            border-radius: inherit;
+        }
+        
+        .selo-top-secret {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #ff4444;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transform: rotate(15deg);
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 12px rgba(255, 68, 68, 0.4);
+            z-index: 10;
+        }
+
         /* Estilos divertidos para os cards de vídeo */
         .video-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -117,20 +161,18 @@
     </div>
 
     <!-- Canvas para confetes -->
-    <canvas id="confetti-canvas" class="fixed inset-0 pointer-events-none z-40"></canvas>    <div class="container mx-auto p-4 md:p-8">
-        <header class="text-center py-8">
-            <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
-                <!-- Título Principal -->
-                <div class="text-center lg:text-left">
-                    <h1 class="font-brand text-5xl md:text-7xl text-gradient-tropical">Parabéns, Lilo!</h1>
-                    <p class="mt-2 text-lg md:text-xl text-cyan-700">Uma homenagem da sua `Ohana`</p>
-                </div>
-                  <!-- Vídeo do Stitch -->
-                <div id="stitch-header" class="flex-shrink-0">
+    <canvas id="confetti-canvas" class="fixed inset-0 pointer-events-none z-40"></canvas>    <div class="container mx-auto p-4 md:p-8">        <header class="text-center py-8 relative">
+            <!-- Título principal centralizado -->
+            <div class="relative">
+                <h1 class="font-brand text-6xl md:text-8xl text-gradient-tropical mb-4">PARABÉNS, LILO!</h1>
+                <p class="text-xl md:text-2xl text-cyan-700 font-medium mb-8">Uma homenagem da sua `Ohana`</p>
+                
+                <!-- Stitch flutuando no canto direito -->
+                <div id="stitch-header" class="absolute top-0 right-0 md:right-8 transform translate-x-4 md:translate-x-8 z-10">
                     <div class="bg-gradient-to-br from-cyan-50 to-blue-100 border-4 border-cyan-300 rounded-3xl p-3 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
                         <div class="flex justify-center">
                             <!-- O vídeo do Stitch será carregado aqui dinamicamente -->
-                            <video id="stitch-video" autoplay loop muted playsinline class="w-64 h-40 object-cover rounded-xl shadow-md border-2 border-cyan-200">
+                            <video id="stitch-video" autoplay loop muted playsinline class="w-32 h-24 md:w-48 md:h-32 object-cover rounded-xl shadow-md border-2 border-cyan-200">
                                 <source src="" type="video/mp4">
                                 Seu navegador não suporta o elemento de vídeo.
                             </video>
@@ -148,27 +190,27 @@
 
         <main>
             <!-- Aba 1: A Formanda (Lilo) -->
-            <div id="tab-lilo" class="tab-content active">
-                <section class="text-center bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-lg mb-12 border-2 border-pink-300">
-                     <h2 class="font-brand text-3xl md:text-4xl text-pink-600 mb-4">Ficha do Experimento 627: "Lilo"</h2>
-                     <div class="text-left max-w-2xl mx-auto space-y-3 text-gray-700">
+            <div id="tab-lilo" class="tab-content active">                <section class="ficha-experimento text-center p-8 md:p-12 rounded-2xl shadow-lg mb-12 mx-4 md:mx-8 relative">
+                    <div class="selo-top-secret">TOP SECRET</div>
+                    <h2 class="font-brand text-3xl md:text-4xl text-pink-600 mb-6">Ficha do Experimento 627: "Lilo"</h2>
+                    <div class="text-left max-w-2xl mx-auto space-y-4 text-gray-700">
                         <p><strong><span class="text-pink-500">◆</span> Designação:</strong> Ana Tereza, A Pedagoga Fantástica</p>
                         <p><strong><span class="text-blue-500">◆</span> Diretiva Primária:</strong> Mudar o mundo através da educação, um aluno de cada vez.</p>
                         <p><strong><span class="text-yellow-500">◆</span> Atributos Observados:</strong></p>
-                        <ul class="list-disc list-inside ml-4">
+                        <ul class="list-disc list-inside ml-6 space-y-2">
                             <li><strong>Carisma Galáctico:</strong> Nível 100 (Capaz de acalmar um Stitch e fazer amizade com qualquer ser da galáxia).</li>
                             <li><strong>Inteligência Freiriana:</strong> Nível 100 (Potencializada por doses de café e sabedoria de Paulo Freire).</li>
                             <li><strong>Coração:</strong> Escala de medição quebrada (simplesmente grande demais).</li>
                         </ul>
                         <p><strong><span class="text-green-500">◆</span> Habilidade Especial:</strong> <span class="font-bold">Vínculo de `Ohana`</span>. Com seu carinho, une as pessoas e garante que ninguém seja deixado para trás ou esquecido.</p>
-                     </div>
+                    </div>
                 </section>
                 
                 <section id="gallery">
                     <h2 class="font-brand text-4xl md:text-5xl text-center mb-8 text-cyan-800">📸 Registros de Campo (Linha do Tempo) 📸</h2>
                     <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
                         Evidências visuais da evolução do Experimento 627, desde os testes iniciais de mobilidade até a conclusão bem-sucedida da diretiva primária.
-                    </p>                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    </p>                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <!-- As imagens serão carregadas dinamicamente pelo data.js -->
                     </div>
                 </section>
@@ -207,7 +249,7 @@
                 <section id="minha-explicacao" class="py-12">
                     <div class="max-w-4xl mx-auto text-center">
                         <h2 class="font-brand text-3xl md:text-4xl text-cyan-800 mb-8">💕 Chegou minha vez... 💕</h2>                        <div class="bg-gradient-to-br from-pink-50 to-purple-50 p-4 md:p-6 rounded-3xl shadow-xl border-4 border-pink-200 mb-8">
-                            <video controls class="w-full max-w-lg mx-auto rounded-2xl shadow-lg">
+                            <video controls class="w-full max-w-md mx-auto rounded-2xl shadow-lg">
                                 <source src="#" type="video/mp4">
                                 Seu navegador não suporta o elemento de vídeo.
                             </video>
