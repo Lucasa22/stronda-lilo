@@ -87,11 +87,16 @@
       "descricao": "Por essa eu tenho certeza que você não esperava 💙💙",
       "link": "/stronda-lilo/FORMADA/vovo.mp4",
       "destaque": true
-    },
-    "usuario": {
+    },    "usuario": {
       "titulo": "Chegou minha vez...",
       "descricao": "",
       "link": "/stronda-lilo/FORMADA/meuvideopraformada.mp4",
+      "autor": "Seu Amor"
+    },
+    "oi_mae": {
+      "titulo": "Oi mãe",
+      "descricao": "oi mae",
+      "link": "/stronda-lilo/FORMADA/lilo-com-sandy-a-coelinha.mp4",
       "autor": "Seu Amor"
     }
   },
@@ -191,14 +196,21 @@
       "capitulo": 3,
       "ordem": 3,
       "historia": "Uma explosão de energia solar na tela! Assim como os girassóis seguem o sol, a artista segue a alegria. Uma pintura que é pura luz e otimismo."
-    },
-    "momento-formatura": {
+    },    "momento-formatura": {
       "src": "/stronda-lilo/FORMADA/IMG-20250611-WA0017.jpg",
       "alt": "Momento especial da formatura, celebrando a conquista do diploma.",
       "categoria": "formatura",
       "capitulo": 4,
       "ordem": 1,
       "historia": "Missão Pedagogia: CONCLUÍDA! Após anos de batalhas épicas contra TCCs e provas, a nossa heroína emerge vitoriosa com seu merecido diploma. O universo que se prepare!"
+    },
+    "novo-experimento-adocao": {
+      "src": "/stronda-lilo/FORMADA/nossa-coelinha-bebe-oimae.jpg",
+      "alt": "Novo experimento - adoção",
+      "categoria": "familia",
+      "capitulo": 4,
+      "ordem": 2,
+      "historia": "Novo experimento - adoção"
     }
   }
 }

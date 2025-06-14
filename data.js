@@ -3,11 +3,11 @@ const siteData = {
     // Dados da galeria de fotos (carregados dinamicamente)
     gallery: [],    // Dados dos vídeos (carregados dinamicamente)
     videos: [],
-    
-    // Dados dos vídeos especiais (vovó e usuário)
+      // Dados dos vídeos especiais (vovó e usuário)
     videosEspeciais: {
         vovo: null,
-        usuario: null
+        usuario: null,
+        oi_mae: null
     },// Dados das mensagens
     messages: [
         {
@@ -57,11 +57,11 @@ const DataLoader = {
                     tipo: video.tipo || 'normal'
                 }));
             }
-            
-            // Carregar vídeos especiais
+              // Carregar vídeos especiais
             if (conteudoData.videos_especiais) {
                 siteData.videosEspeciais.vovo = conteudoData.videos_especiais.vovo;
                 siteData.videosEspeciais.usuario = conteudoData.videos_especiais.usuario;
+                siteData.videosEspeciais.oi_mae = conteudoData.videos_especiais.oi_mae;
             }
             
             return { images: siteData.gallery, videos: siteData.videos };
@@ -471,8 +471,7 @@ const ContentManager = {
         } else {
             console.error('Dados do vídeo da vovó não carregados');
         }
-        
-        // Renderizar vídeo do usuário
+          // Renderizar vídeo do usuário
         if (siteData.videosEspeciais.usuario) {
             const usuarioVideoElement = document.querySelector('#minha-explicacao video');
             const usuarioSource = document.querySelector('#minha-explicacao video source');
@@ -485,6 +484,21 @@ const ContentManager = {
             }
         } else {
             console.error('Dados do vídeo do usuário não carregados');
+        }
+        
+        // Renderizar vídeo "oi mae"
+        if (siteData.videosEspeciais.oi_mae) {
+            const oiMaeVideoElement = document.querySelector('#oi-mae-video');
+            const oiMaeSource = document.querySelector('#oi-mae-video source');
+            if (oiMaeVideoElement && oiMaeSource) {
+                oiMaeSource.src = siteData.videosEspeciais.oi_mae.link;
+                oiMaeVideoElement.load(); // Recarregar o vídeo
+                console.log('Vídeo "oi mae" configurado:', siteData.videosEspeciais.oi_mae.link);
+            } else {
+                console.error('Elemento de vídeo "oi mae" não encontrado');
+            }
+        } else {
+            console.error('Dados do vídeo "oi mae" não carregados');
         }
     },
 
