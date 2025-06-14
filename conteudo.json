@@ -55,6 +55,30 @@
       "link": "/stronda-lilo/FORMADA/Lacroso.mp4",
       "cor": "pink",
       "rotacao": "hover:rotate-2"
+    },
+    "recado-cunhada": {
+      "titulo": "Recadinho da Cunhada",
+      "descricao": "Uma mensagem especial da sua cunhada querida! 💕👭",
+      "sessao": "recado-cunhada",
+      "link": "/stronda-lilo/FORMADA/cunhada.mp4",
+      "cor": "purple",
+      "rotacao": "hover:-rotate-1"
+    },
+    "recado-tios-1": {
+      "titulo": "Os Tios Mandaram um Aloha!",
+      "descricao": "Primeira mensagem dos tios da nossa formanda! 🌺👨‍👩‍👧‍👦",
+      "sessao": "recado-tios-1",
+      "link": "/stronda-lilo/FORMADA/tio-e-tia-1.mp4",
+      "cor": "orange",
+      "rotacao": "hover:rotate-1"
+    },
+    "recado-tios-2": {
+      "titulo": "E tem mais dos Tios!",
+      "descricao": "Segunda mensagem cheia de amor dos tios! 💙🎉",
+      "sessao": "recado-tios-2",
+      "link": "/stronda-lilo/FORMADA/tio-e-tia-2.mp4",
+      "cor": "emerald",
+      "rotacao": "hover:-rotate-2"
     }
   },
   "videos_especiais": {
