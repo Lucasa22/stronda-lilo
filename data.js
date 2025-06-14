@@ -449,9 +449,11 @@ const ContentManager = {
                         </a>`
                 }
             `;
-            videosContainer.appendChild(videoCard);
-        });
-    },    // Renderizar vídeos especiais (vovó e usuário)    renderVideosEspeciais: function() {
+            videosContainer.appendChild(videoCard);        });
+    },
+
+    // Renderizar vídeos especiais (vovó e usuário)
+    renderVideosEspeciais: function() {
         console.log('=== RENDERIZANDO VÍDEOS ESPECIAIS ===');
         console.log('Vídeos especiais carregados:', siteData.videosEspeciais);
         
