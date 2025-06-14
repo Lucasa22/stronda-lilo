@@ -314,7 +314,7 @@ const ContentManager = {
             return 0;
         });        imagensOrdenadas.forEach((item, index) => {
             const imgContainer = document.createElement('div');
-            imgContainer.className = 'relative group';
+            imgContainer.className = 'gallery-card relative group';
             
             const img = document.createElement('img');
             img.src = item.src;

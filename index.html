@@ -2,8 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ohana da Lilo - Parabéns pela Formatura!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Ohana da Lilo - Parabéns pela Formatura!</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -49,6 +48,23 @@
         .video-card:nth-child(even) {
             animation: float-right 4s ease-in-out infinite;
         }
+        
+        /* Estilos divertidos para as fotos da galeria */
+        .gallery-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .gallery-card:hover {
+            transform: translateY(-8px) scale(1.05) !important;
+            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.3);
+            animation-play-state: paused !important;
+        }
+        .gallery-card:nth-child(odd) {
+            animation: float-left-gallery 3.5s ease-in-out infinite;
+        }
+        .gallery-card:nth-child(even) {
+            animation: float-right-gallery 3.5s ease-in-out infinite;
+        }
+        
         @keyframes float-left {
             0%, 100% { transform: translateY(0px) rotate(-1.5deg); }
             50% { transform: translateY(-10px) rotate(1.5deg); }
@@ -56,6 +72,14 @@
         @keyframes float-right {
             0%, 100% { transform: translateY(0px) rotate(1.5deg); }
             50% { transform: translateY(-10px) rotate(-1.5deg); }
+        }
+        @keyframes float-left-gallery {
+            0%, 100% { transform: translateY(0px) rotate(-0.8deg); }
+            50% { transform: translateY(-6px) rotate(0.8deg); }
+        }
+        @keyframes float-right-gallery {
+            0%, 100% { transform: translateY(0px) rotate(0.8deg); }
+            50% { transform: translateY(-6px) rotate(-0.8deg); }
         }
 
         /* Estilos para as Abas */
@@ -160,13 +184,12 @@
                 
                 <section id="video-vovo-especial" class="py-12">
                     <div class="max-w-4xl mx-auto text-center">
-                        <h3 class="font-brand text-2xl md:text-3xl text-cyan-800 mb-8">😭 Segura o coração... 😭</h3>
-                        <div class="bg-gradient-to-br from-blue-50 to-red-50 p-6 md:p-8 rounded-3xl shadow-xl border-4 border-red-200">
-                            <video controls class="w-full max-w-2xl mx-auto rounded-2xl shadow-lg">
+                        <h3 class="font-brand text-2xl md:text-3xl text-cyan-800 mb-8">😭 Segura o coração... 😭</h3>                        <div class="bg-gradient-to-br from-blue-50 to-red-50 p-4 md:p-6 rounded-3xl shadow-xl border-4 border-red-200">
+                            <video controls class="w-full max-w-lg mx-auto rounded-2xl shadow-lg">
                                 <source src="#" type="video/mp4">
                                 Seu navegador não suporta o elemento de vídeo.
                             </video>
-                            <p class="mt-6 text-gray-600 italic text-lg">Por essa eu tenho certeza que você não esperava 💙�💙</p>
+                            <p class="mt-4 text-gray-600 italic text-base">Por essa eu tenho certeza que você não esperava 💙💙</p>
                         </div>
                     </div>
                 </section>
@@ -183,13 +206,12 @@
             <div id="tab-explicacao" class="tab-content">
                 <section id="minha-explicacao" class="py-12">
                     <div class="max-w-4xl mx-auto text-center">
-                        <h2 class="font-brand text-3xl md:text-4xl text-cyan-800 mb-8">💕 Chegou minha vez... 💕</h2>
-                        <div class="bg-gradient-to-br from-pink-50 to-purple-50 p-6 md:p-8 rounded-3xl shadow-xl border-4 border-pink-200 mb-12">
-                            <video controls class="w-full max-w-2xl mx-auto rounded-2xl shadow-lg">
+                        <h2 class="font-brand text-3xl md:text-4xl text-cyan-800 mb-8">💕 Chegou minha vez... 💕</h2>                        <div class="bg-gradient-to-br from-pink-50 to-purple-50 p-4 md:p-6 rounded-3xl shadow-xl border-4 border-pink-200 mb-8">
+                            <video controls class="w-full max-w-lg mx-auto rounded-2xl shadow-lg">
                                 <source src="#" type="video/mp4">
                                 Seu navegador não suporta o elemento de vídeo.
                             </video>
-                            <p class="mt-6 text-gray-600 italic text-lg">Um recado feito com todo o amor do mundo para celebrar essa conquista incrível! 🌺</p>
+                            <p class="mt-4 text-gray-600 italic text-base">Um recado feito com todo o amor do mundo para celebrar essa conquista incrível! 🌺</p>
                         </div>
 
                         <div class="bg-white/90 p-8 rounded-3xl shadow-xl border-4 border-red-200 relative">
